@@ -12,10 +12,23 @@ public class FollowerStartRoundViewController : ViewControllerBase
     private void PollForRoundStarted()
     {
         // poll
-        // if started
-        AdvanceToDoRitual();
+        // HandlePollResponse();
+    }
+
+    private void HandlePollResponse()
+    {
+        // if round started
+        HandleRoundStarted();
         // else
-        // PollForRoundStarted();
+        // Delay(AppController.Instance.appTimes.startRoundPoll, () => {
+            // PollForRoundStarted();
+        // }); 
+    }
+
+    private void HandleRoundStarted()
+    {
+        // parse ritual info from response
+        AdvanceToDoRitual();
     }
 
     private void AdvanceToDoRitual()

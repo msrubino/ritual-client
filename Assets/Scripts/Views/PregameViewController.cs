@@ -12,12 +12,19 @@ public class PregameViewController : ViewControllerBase
     private void PollForRoundReady()
     {
         // poll
-        // if ready
-        AdvanceToStartRound();
-        //else
-        // PollForRoundReady()
+        // handle poll response
     }
 
+    private void HandlePollResponse()
+    {
+        // if ready
+        // AdvanceToStartRound();
+        //else
+        // Delay(AppController.Instance.appTimes.roundReadyPoll, () => {
+        //     PollForRoundReady();
+        // });
+    }
+        
     private void AdvanceToStartRound()
     {
         TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
