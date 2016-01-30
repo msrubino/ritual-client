@@ -2075,11 +2075,11 @@ MonoBehaviour:
   viewReferences: {fileID: 0}
   ritualTypeMappings: {fileID: 11400000, guid: eefc667ded671433bbc99bf8626014e6, type: 2}
   appTimes:
-    minSplashAdvance: 0
-    leaderStartReignAdvance: 0
-    leaderStartRoundAdvance: 0
-    roundEndAdvance: 0
-    reignEndAdvance: 0
+    minSplashAdvance: 3
+    leaderStartReignAdvance: 5
+    leaderStartRoundAdvance: 5
+    roundEndAdvance: 5
+    reignEndAdvance: 5
 --- !u!4 &1021734084
 Transform:
   m_ObjectHideFlags: 0
