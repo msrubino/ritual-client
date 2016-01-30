@@ -30,14 +30,14 @@ public class FollowerStartRoundViewController : ViewControllerBase
     private void HandleRoundStarted()
     {
         // parse ritual info from response
-        AdvanceToDoRitual();
+        AdvanceToCountdown();
     }
 
-    private void AdvanceToDoRitual()
+    private void AdvanceToCountdown()
     {
-        var doRitualView = AppController.Instance.viewReferences.followerDoRitualView as FollowerDoRitualViewController;
-        doRitualView.Ritual = _ritual;
-        TransitionToView(doRitualView);
+        var countdownView = AppController.Instance.viewReferences.ritualCountdownView as RitualCountdownViewController;
+        countdownView.Ritual = _ritual;
+        TransitionToView(countdownView);
     }
 
 }
