@@ -49,6 +49,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &189624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 421342}
+  - 114: {fileID: 11490472}
+  m_Layer: 0
+  m_Name: ApiRequestHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &402838
 Transform:
   m_ObjectHideFlags: 1
@@ -60,7 +76,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449400}
-  m_RootOrder: 1
+  m_RootOrder: 2
+--- !u!4 &421342
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449400}
+  m_RootOrder: 0
 --- !u!4 &432558
 Transform:
   m_ObjectHideFlags: 1
@@ -72,7 +100,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449400}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!4 &449400
 Transform:
   m_ObjectHideFlags: 1
@@ -83,6 +111,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 421342}
   - {fileID: 432558}
   - {fileID: 402838}
   m_Father: {fileID: 0}
@@ -98,7 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37cd4832f01cb4bd5b8860da9722c000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseURL: http://localhost:9393/
+  isLocal: 1
+  remoteURL: http://ritual.herokuapp.com/
+  localURL: http://localhost:9393/
   joinRoute: join
 --- !u!114 &11427152
 MonoBehaviour:
@@ -135,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252f6df971bcf4d42a5d7a93b686cde6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shouldSpoofUuid: 1
 --- !u!114 &11465896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,6 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4110ca0234c14f91b6f8c582cd1fa81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  apiRequestHandler: {fileID: 11490472}
   playerController: {fileID: 11443866}
   wwwController: {fileID: 11426124}
   viewReferences: {fileID: 11427152}
@@ -158,6 +191,17 @@ MonoBehaviour:
     leaderStartRoundAdvance: 5
     roundEndAdvance: 5
     reignEndAdvance: 5
+--- !u!114 &11490472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49b3ca14f3b81405e861fad7d82c2d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

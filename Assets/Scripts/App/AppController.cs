@@ -10,8 +10,9 @@ public class AppController : MonoBehaviour
         get { return _instance; }
     }
 
-    public PlayerController playerController;
-    public WWWController    wwwController;
+    public ApiRequestHandler    apiRequestHandler;
+    public PlayerController     playerController;
+    public WWWController        wwwController;
 
     public ViewReferences viewReferences;
     public RitualTypeMappings ritualTypeMappings;
