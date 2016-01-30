@@ -4,6 +4,7 @@ using System.Collections;
 public class FollowerDoRitualViewController : ViewControllerBase 
 {
 
+    [HideInInspector]
     public RitualType ritualType;
 
     private Ritual _ritual;
