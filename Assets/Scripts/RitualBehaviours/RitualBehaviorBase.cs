@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-public abstract class Ritual : MonoBehaviourBase, IRitual
+public abstract class RitualBehaviorBase : MonoBehaviourBase, IRitualBehavior
 {
 
     public event Action DidComplete;

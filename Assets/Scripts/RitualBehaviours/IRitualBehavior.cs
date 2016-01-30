@@ -1,6 +1,6 @@
 ﻿using System;
 
-public interface IRitual
+public interface IRitualBehavior
 {
 
     event Action DidComplete;
