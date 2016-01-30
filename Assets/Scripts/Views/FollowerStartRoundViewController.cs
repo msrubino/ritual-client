@@ -4,6 +4,8 @@ using System.Collections;
 public class FollowerStartRoundViewController : ViewControllerBase
 {
 
+    private RitualInfo _ritualInfo;
+
     public void Start()
     {
         PollForRoundStarted();
@@ -33,7 +35,9 @@ public class FollowerStartRoundViewController : ViewControllerBase
 
     private void AdvanceToDoRitual()
     {
-        TransitionToView(AppController.Instance.viewReferences.followerDoRitualView);
+        var doRitualView = AppController.Instance.viewReferences.followerDoRitualView as FollowerDoRitualViewController;
+        doRitualView.ritualInfo = _ritualInfo;
+        TransitionToView(doRitualView);
     }
 
 }
