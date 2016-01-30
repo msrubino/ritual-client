@@ -5,6 +5,6 @@ public class ViewReferences : MonoBehaviour
 {
 
     public ViewControllerBase joinView;
-    public ViewControllerBase introView;
+    public ViewControllerBase pregameView;
 
 }

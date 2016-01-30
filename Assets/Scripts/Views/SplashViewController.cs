@@ -15,7 +15,7 @@ public class SplashViewController : ViewControllerBase
     {
         Delay(secondsBeforeAdvance, () => {
             // if has identity
-            // TransitionToView(AppController.Instance.viewReferencer.introView);
+            // TransitionToView(AppController.Instance.viewReferencer.pregameView);
             // else
             TransitionToView(AppController.Instance.viewReferences.joinView);
         });

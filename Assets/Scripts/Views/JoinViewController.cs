@@ -22,7 +22,7 @@ public class JoinViewController : ViewControllerBase
     private void Join()
     {
         // join logic
-        TransitionToView(AppController.Instance.viewReferences.introView);
+        TransitionToView(AppController.Instance.viewReferences.pregameView);
     }
 
 }
