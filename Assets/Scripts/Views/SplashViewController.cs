@@ -4,8 +4,6 @@ using System.Collections;
 public class SplashViewController : ViewControllerBase 
 {
 
-    public float secondsBeforeAdvance;
-
     public void Start()
     {
         AdvanceToNextView();
@@ -13,7 +11,7 @@ public class SplashViewController : ViewControllerBase
 
     private void AdvanceToNextView()
     {
-        Delay(secondsBeforeAdvance, () => {
+        Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
             // if has identity
             // TransitionToView(AppController.Instance.viewReferencer.pregameView);
             // else

@@ -4,13 +4,9 @@ using System.Collections;
 public class PregameViewController : ViewControllerBase
 {
 
-    public float minSecondsBeforeAdvance;
-
     public void Start()
     {
-        Delay(minSecondsBeforeAdvance, () => {
-            PollForRoundReady();
-        });
+        PollForRoundReady();
     }
 
     private void PollForRoundReady()

@@ -12,7 +12,7 @@ public class AppController : MonoBehaviour
 
     public ViewReferences viewReferences;
     public RitualTypeMappings ritualTypeMappings;
-
+    public AppTimes appTimes;
     public void Awake()
     {
         _instance = this;
