@@ -14,9 +14,18 @@ public class SplashViewController : ViewControllerBase
         bool hasIdentity = PlayerPrefs.GetString( _app.playerController.playerPrefsNameKey ) != "";
 
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
-            if ( hasIdentity ) AdvanceToPregame();
+            if ( hasIdentity ) HandleExistingUser();
             else AdvanceToJoin();
         });
+    }
+
+    private void HandleExistingUser()
+    {
+        // send uuid to server
+        // if round ready
+        AdvanceToStartRound();
+        // else
+        // AdvanceToPregame();
     }
 
     private void AdvanceToPregame()
