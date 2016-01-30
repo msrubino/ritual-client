@@ -8,7 +8,9 @@ public class WWWController : MonoBehaviour
     public string remoteURL;
     public string localURL;
     public string joinRoute;
+    public string performedRitualRoute;
 
-    public string baseURL { get { return ( isLocal ) ? localURL : remoteURL ; } }
-    public string joinURL { get { return baseURL + joinRoute; } }
+    public string baseURL             { get { return ( isLocal ) ? localURL : remoteURL ; } }
+    public string joinURL             { get { return baseURL + joinRoute; } }
+    public string performedRitualURL  { get { return baseURL + performedRitualRoute; } }
 }

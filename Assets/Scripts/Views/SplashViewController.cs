@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SplashViewController : ViewControllerBase 
@@ -11,14 +11,11 @@ public class SplashViewController : ViewControllerBase
 
     private void AdvanceToNextView()
     {
+        bool hasIdentity = PlayerPrefs.GetString( _app.playerController.playerPrefsNameKey ) != "";
+
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
-            // if has identity
-                // if round ready
-                // AdvanceToStartRound();
-                // else
-                // AdvanceToPregame();
-            // else
-            AdvanceToJoin();
+            if ( hasIdentity ) AdvanceToPregame();
+            else AdvanceToJoin();
         });
     }
 

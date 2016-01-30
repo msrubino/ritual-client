@@ -4,6 +4,8 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour 
 {
+    public string playerPrefsNameKey = "JOINED_WITH_NAME";
+
     public bool shouldSpoofUuid;
     public Player Player { get; set; } 
 
