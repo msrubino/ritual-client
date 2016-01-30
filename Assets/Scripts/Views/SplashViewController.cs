@@ -13,7 +13,10 @@ public class SplashViewController : ViewControllerBase
     {
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
             // if has identity
-            // AdvanceToPregame();
+                // if round ready
+                // AdvanceToStartRound();
+                // else
+                // AdvanceToPregame();
             // else
             AdvanceToJoin();
         });
@@ -24,6 +27,11 @@ public class SplashViewController : ViewControllerBase
         TransitionToView(AppController.Instance.viewReferences.pregameView);
     }
 
+    private void AdvanceToStartRound()
+    {
+        TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
+    }
+    
     private void AdvanceToJoin()
     {
         TransitionToView(AppController.Instance.viewReferences.joinView);
