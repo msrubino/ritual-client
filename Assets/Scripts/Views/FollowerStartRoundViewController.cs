@@ -36,7 +36,7 @@ public class FollowerStartRoundViewController : ViewControllerBase
     private void AdvanceToDoRitual()
     {
         var doRitualView = AppController.Instance.viewReferences.followerDoRitualView as FollowerDoRitualViewController;
-        doRitualView.ritualInfo = _ritualInfo;
+        doRitualView.RitualInfo = _ritualInfo;
         TransitionToView(doRitualView);
     }
 
