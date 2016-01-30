@@ -1,5 +1,7 @@
 ﻿
 public enum RitualType
 {
-    TapFourTimes
+    TapFourTimes,
+    SwipeRightThreeTimes,
+    ShakePhone
 }
