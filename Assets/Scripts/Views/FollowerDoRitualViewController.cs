@@ -29,6 +29,11 @@ public class FollowerDoRitualViewController : ViewControllerBase
     private void RitualDidComplete()
     {
         Destroy(_ritual.gameObject);
+        AdvanceToRitualComplete();
+    }
+
+    private void AdvanceToRitualComplete()
+    {
         TransitionToView(AppController.Instance.viewReferences.followerRitualCompleteView);
     }
 
