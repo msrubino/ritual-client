@@ -9,6 +9,7 @@ public class RitualTypeMappings : ScriptableObject
     public class Mapping
     {
         public RitualType ritualType;
+        public float duration;
         public RitualBehaviorBase ritualBehavior;
         public Button ritualChooseButton;
     }
