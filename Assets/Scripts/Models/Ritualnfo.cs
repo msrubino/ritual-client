@@ -1,5 +1,5 @@
 ﻿
-public class Ritualnfo 
+public class RitualInfo 
 {
 
     private RitualType _ritualType;
