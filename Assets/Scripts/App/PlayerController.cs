@@ -14,4 +14,9 @@ public class PlayerController : MonoBehaviour
         Player = new Player(); 
         Player.Uuid = Guid.NewGuid().ToString();
     }
+
+    public bool HasJoinedServerWithName()
+    {
+        return PlayerPrefs.GetString( playerPrefsNameKey ) != "";
+    }
 }

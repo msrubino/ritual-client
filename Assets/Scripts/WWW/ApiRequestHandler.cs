@@ -16,8 +16,10 @@ public class ApiRequestHandler : MonoBehaviourBase
         string leaderJSON = JsonHelper.GetJsonObject( request.text, "leader" );
         RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( leaderJSON );
 
+        Ritual ritual = JsonUtility.FromJson<Ritual>( request.text );
+        Debug.Log( ritual );
+
         _player.IsLeader = leader.uuid == _player.Uuid ;
-        if ( _player.IsLeader ) Debug.Log( "I am the leader." );
 
         PlayerPrefs.SetString( _app.playerController.playerPrefsNameKey, _player.Username );
     }

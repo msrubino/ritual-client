@@ -11,7 +11,7 @@ public class SplashViewController : ViewControllerBase
 
     private void AdvanceToNextView()
     {
-        bool hasIdentity = PlayerPrefs.GetString( _app.playerController.playerPrefsNameKey ) != "";
+        bool hasIdentity = _app.playerController.HasJoinedServerWithName();
 
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
             if ( hasIdentity ) HandleExistingUser();

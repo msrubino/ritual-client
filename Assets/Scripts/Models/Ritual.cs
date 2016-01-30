@@ -1,7 +1,6 @@
 ﻿
 public class Ritual
 {
-
     private RitualType _ritualType;
     public RitualType RitualType
     {
