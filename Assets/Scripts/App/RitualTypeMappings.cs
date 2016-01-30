@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class RitualTypeMappings : ScriptableObject 
@@ -9,6 +10,7 @@ public class RitualTypeMappings : ScriptableObject
     {
         public RitualType ritualType;
         public Ritual ritual;
+        public Button ritualChooseButton;
     }
 
     public Mapping[] mappings;

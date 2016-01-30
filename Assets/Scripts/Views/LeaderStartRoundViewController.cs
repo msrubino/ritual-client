@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LeaderStartRoundViewController : ViewControllerBase
 {
-    
+
     public void Start()
     {
         DelayedAdvanceToChooseRitual();
@@ -12,7 +12,7 @@ public class LeaderStartRoundViewController : ViewControllerBase
     private void DelayedAdvanceToChooseRitual()
     {
         TransitionToView(AppController.Instance.appTimes.leaderStartRoundAdvance,
-                         AppController.Instance.viewReferences.followerDoRitualView);
+                         AppController.Instance.viewReferences.leaderChooseRitualView);
     }
 
 }
