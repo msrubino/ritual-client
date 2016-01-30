@@ -13,7 +13,7 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
     {
         Delay(AppController.Instance.appTimes.roundEndAdvance, () => {
             // if is reign over
-            HandleReignOver()
+            HandleReignOver();
             // else
             // AdvanceToNextRound()
         });
@@ -21,18 +21,19 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
 
     private void HandleReignOver()
     {
-
+        // if won reign
+        // AdvanceToWonReign();
+        // else
+        // AdvanceToAnnounceReignWinner();
     }
 
 
     private void AdvanceToNextRound()
     {
         // if is leader
-        // TransitionToView(AppController.Instance.appTimes.roundEndAdvance,
-                            // AppController.Instance.viewReferences.leaderStartRoundView);
+        // TransitionToView(AppController.Instance.viewReferences.leaderStartRoundView);
         // else
-        TransitionToView(AppController.Instance.appTimes.roundEndAdvance,
-                         AppController.Instance.viewReferences.followerStartRoundView);
+        TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
     }
 
     private void AdvanceToAnnounceReignWinner()
