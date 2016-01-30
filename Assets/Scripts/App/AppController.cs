@@ -11,6 +11,7 @@ public class AppController : MonoBehaviour
     }
 
     public ViewReferences viewReferences;
+    public RitualTypeMappings ritualTypeMappings;
 
     public void Awake()
     {

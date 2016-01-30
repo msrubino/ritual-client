@@ -9,5 +9,6 @@ public class ViewReferences : MonoBehaviour
     public ViewControllerBase followerStartRoundView;
     public ViewControllerBase leaderStartRoundView;
     public ViewControllerBase followerDoRitualView;
+    public ViewControllerBase followerRitualCompleteView;
 
 }
