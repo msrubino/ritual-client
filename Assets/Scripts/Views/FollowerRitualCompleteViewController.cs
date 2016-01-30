@@ -4,21 +4,33 @@ using System.Collections;
 public class FollowerRitualCompleteViewController : ViewControllerBase
 {
 
+    private float _timeToCheckForResult;
+    public float TimeToCheckForResult
+    {
+        set { _timeToCheckForResult = value; }
+    }
+
     public void Start()
     {
-        PollForRoundOver();
+        StartCoroutine(WaitToCheckForResult());
     }
 
-    private void PollForRoundOver()
+    private IEnumerator WaitToCheckForResult()
     {
-        // poll
-        // if round over
-        ParseResponse();
-        // else
-        // PollForRoundOver();
+        while (Time.time < _timeToCheckForResult)
+        {
+            yield return null;
+        }
+        CheckForResult();
     }
 
-    private void ParseResponse()
+    private void CheckForResult()
+    {
+        // check for result
+        // HandleResultResponse();
+    }
+
+    private void HandleResultResponse()
     {
         // if reign over
         // HandleReignOver();

@@ -87,8 +87,8 @@ public class FollowerDoRitualViewController : ViewControllerBase
     private void AdvanceToRitualComplete()
     {
         Destroy(_ritual.gameObject);
-        var ritualComplete = AppController.Instance.viewReferences.followerRitualCompleteView;
-        ritualComplete.TimeToComplete = _startTime + _ritualInfo.TimeUntilStart;
+        var ritualComplete = AppController.Instance.viewReferences.followerRitualCompleteView as FollowerRitualCompleteViewController;
+        ritualComplete.TimeToCheckForResult = _startTime + _ritualInfo.TimeUntilStart;
         TransitionToView(ritualComplete);
     }
 
