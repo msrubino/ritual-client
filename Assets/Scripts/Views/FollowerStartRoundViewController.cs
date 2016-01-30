@@ -19,12 +19,19 @@ public class FollowerStartRoundViewController : ViewControllerBase
 
     private void HandlePollResponse()
     {
+        // if new leader
+        // AdvanceToLeaderFailed();
         // if round started
         HandleRoundStarted();
         // else
         // Delay(AppController.Instance.appTimes.startRoundPoll, () => {
             // PollForRoundStarted();
         // }); 
+    }
+
+    private void AdvanceToLeaderFailed()
+    {
+        TransitionToView(AppController.Instance.viewReferences.leaderFailedView);
     }
 
     private void HandleRoundStarted()
