@@ -10,6 +10,8 @@ public class AppController : MonoBehaviour
         get { return _instance; }
     }
 
+    public ViewReferences viewReferences;
+
     public void Awake()
     {
         _instance = this;
