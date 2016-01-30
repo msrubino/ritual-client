@@ -4,15 +4,15 @@ using System.Collections;
 public class FollowerDoRitualViewController : ViewControllerBase 
 {
 
-    private Ritual _ritual;
+    private RitualBehaviorBase _ritualBehavior;
     private bool _didCompleteOrTimeout;
     private float _startTime;
     private bool _isSubscribedToRitualDidComplete;
 
-    private RitualInfo _ritualInfo;
-    public RitualInfo RitualInfo
+    private RitualRun _ritualRun;
+    public RitualRun RitualRun
     {
-        set { _ritualInfo = value; }
+        set { _ritualRun = value; }
     }
 
     public void Start()
@@ -25,14 +25,14 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private void CreateRitualObject()
     {
-        var ritualType = AppController.Instance.ritualTypeMappings.GetRitualForType(_ritualInfo.RitualType);
-        _ritual = Instantiate(ritualType, Vector3.zero, Quaternion.identity) as Ritual;
+        var ritualBehavior = AppController.Instance.ritualTypeMappings.GetRitualForType(_ritualRun.RitualType);
+        _ritualBehavior = Instantiate(ritualBehavior, Vector3.zero, Quaternion.identity) as RitualBehaviorBase;
     }
     
     private void BeginRitual()
     {
         SubscribeToRitualDidComplete();
-        _ritual.Begin();
+        _ritualBehavior.Begin();
     }
 
     private IEnumerator CheckForTimeout()
@@ -51,7 +51,7 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private bool HasTimedOut()
     {
-        return Time.time - _startTime >= _ritualInfo.TimeUntilStart;
+        return Time.time - _startTime >= _ritualRun.TimeUntilStart;
     }
 
     private void Timeout()
@@ -74,21 +74,21 @@ public class FollowerDoRitualViewController : ViewControllerBase
     {
         if (_isSubscribedToRitualDidComplete) return;
         _isSubscribedToRitualDidComplete = true;
-        _ritual.DidComplete += RitualDidComplete;
+        _ritualBehavior.DidComplete += RitualDidComplete;
     }
 
     private void UnsubscribeToRitualDidComplete()
     {
         if (!_isSubscribedToRitualDidComplete) return;
         _isSubscribedToRitualDidComplete = false;
-        _ritual.DidComplete -= RitualDidComplete;
+        _ritualBehavior.DidComplete -= RitualDidComplete;
     }
 
     private void AdvanceToRitualComplete()
     {
-        Destroy(_ritual.gameObject);
+        Destroy(_ritualBehavior.gameObject);
         var ritualComplete = AppController.Instance.viewReferences.followerRitualCompleteView as FollowerRitualCompleteViewController;
-        ritualComplete.TimeToCheckForResult = _startTime + _ritualInfo.TimeUntilStart;
+        ritualComplete.TimeToCheckForResult = _startTime + _ritualRun.TimeUntilStart;
         TransitionToView(ritualComplete);
     }
 

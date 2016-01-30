@@ -23,12 +23,12 @@ public class LeaderChooseRitualViewController : ViewControllerBase
         float y = startY;
         foreach(var mapping in AppController.Instance.ritualTypeMappings.mappings)
         {
-            AddButton(mapping.ritualChooseButton, mapping.ritual, y);
+            AddButton(mapping.ritualChooseButton, mapping.ritualType, y);
             y += ySpacing;
         }
     }
 
-    private void AddButton(Button button, Ritual ritual, float y)
+    private void AddButton(Button button, RitualType ritualType, float y)
     {
         // add button at y
         // assign action to button: Button

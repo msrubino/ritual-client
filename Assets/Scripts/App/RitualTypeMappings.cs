@@ -9,19 +9,19 @@ public class RitualTypeMappings : ScriptableObject
     public class Mapping
     {
         public RitualType ritualType;
-        public Ritual ritual;
+        public RitualBehaviorBase ritualBehavior;
         public Button ritualChooseButton;
     }
 
     public Mapping[] mappings;
 
-    public Ritual GetRitualForType(RitualType ritualType)
+    public RitualBehaviorBase GetRitualForType(RitualType ritualType)
     {
         foreach (var mapping in mappings)
         {
             if (ritualType == mapping.ritualType)
             {
-                return mapping.ritual;
+                return mapping.ritualBehavior;
             }
         }
         return null;
