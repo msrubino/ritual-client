@@ -11,11 +11,11 @@ public class SplashViewController : ViewControllerBase
 
     private void AdvanceToNextView()
     {
+        bool hasIdentity = PlayerPrefs.GetString( _app.playerController.playerPrefsNameKey ) != "";
+
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
-            // if has identity
-            // AdvanceToPregame();
-            // else
-            AdvanceToJoin();
+            if ( hasIdentity ) AdvanceToPregame();
+            else AdvanceToJoin();
         });
     }
 
