@@ -10,12 +10,22 @@ public class AppController : MonoBehaviour
         get { return _instance; }
     }
 
+    public ApiRequestHandler    apiRequestHandler;
+    public PlayerController     playerController;
+    public WWWController        wwwController;
+
     public ViewReferences viewReferences;
     public RitualTypeMappings ritualTypeMappings;
     public AppTimes appTimes;
+
     public void Awake()
     {
         _instance = this;
+    }
+
+    public void Start()
+    {
+        playerController.CreatePlayer();
     }
 
 }

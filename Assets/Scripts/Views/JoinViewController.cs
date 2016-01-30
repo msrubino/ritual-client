@@ -6,7 +6,7 @@ using System.Collections;
 public class JoinViewController : ViewControllerBase 
 {
 
-    public InputField usernameField;
+    public Text usernameField;
     public Button joinButton;
 
     public void OnEnable()
@@ -21,7 +21,13 @@ public class JoinViewController : ViewControllerBase
 
     private void Join()
     {
-        // send join
+        SetUserName();
+        StartCoroutine( DoJoin() );
+    }
+
+    private IEnumerator DoJoin()
+    {
+        yield return StartCoroutine( _api.Join() );
         AdvanceToPregame();
     }
 
@@ -30,4 +36,8 @@ public class JoinViewController : ViewControllerBase
         TransitionToView(AppController.Instance.viewReferences.pregameView);
     }
 
+    private void SetUserName()
+    {
+        _player.Username = usernameField.text; 
+    }
 }
