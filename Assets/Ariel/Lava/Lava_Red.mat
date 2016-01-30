@@ -148,18 +148,6 @@ Material:
         second: -0.5
       data:
         first:
-          name: _Amplitude2
-        second: 0.05
-      data:
-        first:
-          name: _Frequency2
-        second: 12
-      data:
-        first:
-          name: _Speed2
-        second: 0.5
-      data:
-        first:
           name: _AmplitudeTop
         second: 0.04
       data:
@@ -170,6 +158,18 @@ Material:
         first:
           name: _SpeedTop
         second: 6
+      data:
+        first:
+          name: _Amplitude2
+        second: 0.05
+      data:
+        first:
+          name: _Frequency2
+        second: 12
+      data:
+        first:
+          name: _Speed2
+        second: 0.5
       data:
         first:
           name: _MaxTopOffset
@@ -190,11 +190,11 @@ Material:
       data:
         first:
           name: _TopColor
-        second: {r: 1, g: 0.76551723, b: 0, a: 0}
+        second: {r: 1, g: 0.022058845, b: 0.022058845, a: 0}
       data:
         first:
           name: _BottomColor
-        second: {r: 1, g: 0, b: 0, a: 0.772}
+        second: {r: 1, g: 0.31034482, b: 0, a: 0.772}
       data:
         first:
           name: _TopColour
