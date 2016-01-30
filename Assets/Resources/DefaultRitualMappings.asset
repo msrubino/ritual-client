@@ -11,4 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29fd2fb80bb1b4502950499d0dbb4590, type: 3}
   m_Name: DefaultRitualMappings
   m_EditorClassIdentifier: 
-  mappings: []
+  mappings:
+  - ritualType: 0
+    ritualBehavior: {fileID: 0}
+    ritualChooseButton: {fileID: 11490426, guid: cc318289e847945b6891861d1c15915f,
+      type: 2}
+  - ritualType: 1
+    ritualBehavior: {fileID: 0}
+    ritualChooseButton: {fileID: 11417202, guid: 8439ccfe1e30d40bcb3177a59b0cb0f0,
+      type: 2}
+  - ritualType: 2
+    ritualBehavior: {fileID: 0}
+    ritualChooseButton: {fileID: 11491256, guid: c042cd28ba4694914a99a5f780653cea,
+      type: 2}
