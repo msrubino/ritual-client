@@ -2053,6 +2053,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1021734084}
   - 114: {fileID: 1021734083}
+  - 114: {fileID: 1021734085}
   m_Layer: 0
   m_Name: App
   m_TagString: Untagged
@@ -2091,6 +2092,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!114 &1021734085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1021734082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952777da23d7a43a891c555d59b98ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joinView: {fileID: 1469148755}
+  pregameView: {fileID: 574682949}
+  followerStartRoundView: {fileID: 0}
+  leaderStartRoundView: {fileID: 0}
+  leaderStartReignView: {fileID: 2095448505}
+  followerDoRitualView: {fileID: 984530192}
+  followerRitualCompleteView: {fileID: 0}
+  leaderChooseRitualView: {fileID: 982334436}
+  leaderWaitForRitualView: {fileID: 0}
+  wonReignView: {fileID: 1536970912}
+  announceReignWinnerView: {fileID: 669965382}
+  wonRoundView: {fileID: 0}
+  announceRoundWinnerView: {fileID: 823463769}
 --- !u!1 &1068953527
 GameObject:
   m_ObjectHideFlags: 0
