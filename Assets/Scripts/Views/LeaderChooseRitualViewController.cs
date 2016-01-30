@@ -37,7 +37,9 @@ public class LeaderChooseRitualViewController : ViewControllerBase
     private void ButtonWasClicked(Ritual ritual)
     {
         // send ritual
-        TransitionToView(AppController.Instance.viewReferences.leaderWaitForRitualView);
+        var waitForRitualView = AppController.Instance.viewReferences.leaderWaitForRitualView as LeaderWaitForRitualViewController;
+        waitForRitualView.Ritual = ritual;
+        TransitionToView(waitForRitualView);
     }
 
     private void RemoveAll()

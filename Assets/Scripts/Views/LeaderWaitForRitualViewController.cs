@@ -4,24 +4,27 @@ using System.Collections;
 public class LeaderWaitForRitualViewController : ViewControllerBase
 {
 
-    public float timeToSync;
+    private Ritual _ritual;
+    public Ritual Ritual
+    {
+        set { _ritual = value; }
+    }
 
     public void Start()
     {
-        DelayedSync();
+        DelayedCheckForResult();
     }
 
-    private void DelayedSync()
+    private void DelayedCheckForResult()
     {
-        float delay = Mathf.Min(0f, timeToSync - Time.time);
-        Delay(delay, () => {
-            Sync();
+        Delay(_ritual.Duration, () => {
+            CheckForResult();
         });
     }
 
-    private void Sync()
+    private void CheckForResult()
     {
-        // sync
+        // check for result
         // ParseResponse();
     }
 
