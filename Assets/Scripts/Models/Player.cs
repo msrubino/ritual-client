@@ -1,8 +1,9 @@
-﻿
+﻿using UnityEngine;
+
 public class Player
 {
 
-    private string _uuid;
+    private string _uuid = SystemInfo.deviceUniqueIdentifier;
     public string Uuid
     {
         get { return _uuid; }
