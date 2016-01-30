@@ -13,6 +13,7 @@ public class PregameViewController : ViewControllerBase
     {
         // poll
         // handle poll response
+        AdvanceToStartRound();
     }
 
     private void HandlePollResponse()
