@@ -10,5 +10,9 @@ public class ViewReferences : MonoBehaviour
     public ViewControllerBase leaderStartRoundView;
     public ViewControllerBase followerDoRitualView;
     public ViewControllerBase followerRitualCompleteView;
+    public ViewControllerBase wonReignView;
+    public ViewControllerBase announceReignWinnerView;
+    public ViewControllerBase wonRoundView;
+    public ViewControllerBase announceRoundWinnerView;
 
 }
