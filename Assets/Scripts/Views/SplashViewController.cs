@@ -13,10 +13,20 @@ public class SplashViewController : ViewControllerBase
     {
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
             // if has identity
-            // TransitionToView(AppController.Instance.viewReferencer.pregameView);
+            // AdvanceToPregame();
             // else
-            TransitionToView(AppController.Instance.viewReferences.joinView);
+            AdvanceToJoin();
         });
+    }
+
+    private void AdvanceToPregame()
+    {
+        TransitionToView(AppController.Instance.viewReferences.pregameView);
+    }
+
+    private void AdvanceToJoin()
+    {
+        TransitionToView(AppController.Instance.viewReferences.joinView);
     }
 
 }

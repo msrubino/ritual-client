@@ -21,7 +21,12 @@ public class JoinViewController : ViewControllerBase
 
     private void Join()
     {
-        // join logic
+        // send join
+        AdvanceToPregame();
+    }
+
+    private void AdvanceToPregame()
+    {
         TransitionToView(AppController.Instance.viewReferences.pregameView);
     }
 
