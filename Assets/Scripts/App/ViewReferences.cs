@@ -8,5 +8,6 @@ public class ViewReferences : MonoBehaviour
     public ViewControllerBase pregameView;
     public ViewControllerBase followerStartRoundView;
     public ViewControllerBase leaderStartRoundView;
+    public ViewControllerBase followerDoRitualView;
 
 }
