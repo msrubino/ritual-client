@@ -21,32 +21,23 @@ public class JoinViewController : ViewControllerBase
 
     private void Join()
     {
+        SetUserName();
         StartCoroutine( DoJoin() );
     }
 
     private IEnumerator DoJoin()
     {
-        // join logic
-        // Create the Join request.
-        // Pass name in.
-        // Pass UUID in.
-        WWW request = CreateJoinPOSTRequest();
+        yield return StartCoroutine( _api.Join() );
+        AdvanceToPregame();
+    }
 
-        yield return request;
-
+    private void AdvanceToPregame()
+    {
         TransitionToView(AppController.Instance.viewReferences.pregameView);
     }
 
-    private WWW CreateJoinPOSTRequest()
+    private void SetUserName()
     {
         _player.Username = usernameField.text; 
-
-        WWWForm form = new WWWForm(); 
-        form.AddField( "uuid", _player.Uuid );
-        form.AddField( "name", _player.Username );
-        
-        string url = _www.joinURL;
-        return new WWW( url, form );
-
     }
 }
