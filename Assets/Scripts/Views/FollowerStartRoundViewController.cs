@@ -4,7 +4,7 @@ using System.Collections;
 public class FollowerStartRoundViewController : ViewControllerBase
 {
 
-    private RitualRun _ritualRun;
+    private Ritual _ritual;
 
     public void Start()
     {
@@ -36,7 +36,7 @@ public class FollowerStartRoundViewController : ViewControllerBase
     private void AdvanceToDoRitual()
     {
         var doRitualView = AppController.Instance.viewReferences.followerDoRitualView as FollowerDoRitualViewController;
-        doRitualView.RitualRun = _ritualRun;
+        doRitualView.Ritual = _ritual;
         TransitionToView(doRitualView);
     }
 

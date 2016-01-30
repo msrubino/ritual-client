@@ -9,6 +9,13 @@ public class Ritual
         set { _ritualType = value; }
     }
 
+    private float _timeUntilStart;
+    public float TimeUntilStart
+    {
+        get { return _timeUntilStart; }
+        set { _timeUntilStart = value; }
+    }
+
     private float _duration;
     public float Duration
     {
