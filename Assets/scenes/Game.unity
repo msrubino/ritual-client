@@ -2044,78 +2044,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 995157995}
---- !u!1 &1021734082
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1021734084}
-  - 114: {fileID: 1021734083}
-  - 114: {fileID: 1021734085}
-  m_Layer: 0
-  m_Name: App
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1021734083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1021734082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4110ca0234c14f91b6f8c582cd1fa81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewReferences: {fileID: 1021734085}
-  ritualTypeMappings: {fileID: 11400000, guid: eefc667ded671433bbc99bf8626014e6, type: 2}
-  appTimes:
-    minSplashAdvance: 3
-    leaderStartReignAdvance: 5
-    leaderStartRoundAdvance: 5
-    roundEndAdvance: 5
-    reignEndAdvance: 5
---- !u!4 &1021734084
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1021734082}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
---- !u!114 &1021734085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1021734082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952777da23d7a43a891c555d59b98ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  joinView: {fileID: 1469148755}
-  pregameView: {fileID: 574682949}
-  followerStartRoundView: {fileID: 0}
-  leaderStartRoundView: {fileID: 0}
-  leaderStartReignView: {fileID: 2095448505}
-  followerDoRitualView: {fileID: 984530192}
-  followerRitualCompleteView: {fileID: 0}
-  leaderChooseRitualView: {fileID: 982334436}
-  leaderWaitForRitualView: {fileID: 0}
-  wonReignView: {fileID: 1536970912}
-  announceReignWinnerView: {fileID: 669965382}
-  wonRoundView: {fileID: 0}
-  announceRoundWinnerView: {fileID: 823463769}
 --- !u!1 &1068953527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2149,84 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
+--- !u!1001 &1190218790
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 449400, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449400, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449400, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449400, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449400, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449400, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 449400, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 449400, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11427152, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: joinView
+      value: 
+      objectReference: {fileID: 1469148755}
+    - target: {fileID: 11427152, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: pregameView
+      value: 
+      objectReference: {fileID: 574682949}
+    - target: {fileID: 11427152, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: leaderStartReignView
+      value: 
+      objectReference: {fileID: 2095448505}
+    - target: {fileID: 11427152, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: followerDoRitualView
+      value: 
+      objectReference: {fileID: 984530192}
+    - target: {fileID: 11427152, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: leaderChooseRitualView
+      value: 
+      objectReference: {fileID: 982334436}
+    - target: {fileID: 11427152, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: wonReignView
+      value: 
+      objectReference: {fileID: 1536970912}
+    - target: {fileID: 11427152, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: announceReignWinnerView
+      value: 
+      objectReference: {fileID: 669965382}
+    - target: {fileID: 11427152, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: announceRoundWinnerView
+      value: 
+      objectReference: {fileID: 823463769}
+    - target: {fileID: 11426124, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+      propertyPath: baseURL
+      value: http://ritual.herokuapp.com/
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 064197e1b31a448578543565b20d0d80, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1205292193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,10 +2507,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -2865,7 +2871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ef5a413417a4251946f9f698224f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usernameField: {fileID: 1697494410}
+  usernameField: {fileID: 1340062920}
   joinButton: {fileID: 344948166}
 --- !u!1 &1470299763
 GameObject:
