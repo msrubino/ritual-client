@@ -65,6 +65,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &182680
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 454474}
+  - 82: {fileID: 8254626}
+  m_Layer: 0
+  m_Name: SFXAudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &182980
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +114,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &193160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 460478}
+  - 114: {fileID: 11466264}
+  m_Layer: 0
+  m_Name: ThemeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &402838
 Transform:
   m_ObjectHideFlags: 1
@@ -109,7 +141,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449400}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &421342
 Transform:
   m_ObjectHideFlags: 1
@@ -131,9 +163,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 454474}
   m_Father: {fileID: 449400}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!4 &432558
 Transform:
   m_ObjectHideFlags: 1
@@ -145,7 +178,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449400}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &449400
 Transform:
   m_ObjectHideFlags: 1
@@ -157,12 +190,37 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421342}
+  - {fileID: 422910}
   - {fileID: 432558}
   - {fileID: 462942}
   - {fileID: 402838}
-  - {fileID: 422910}
+  - {fileID: 460478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &454474
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182680}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422910}
+  m_RootOrder: 0
+--- !u!4 &460478
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193160}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449400}
+  m_RootOrder: 5
 --- !u!4 &462942
 Transform:
   m_ObjectHideFlags: 1
@@ -174,7 +232,81 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449400}
-  m_RootOrder: 2
+  m_RootOrder: 3
+--- !u!82 &8254626
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182680}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &8258604
 AudioSource:
   m_ObjectHideFlags: 1
@@ -329,8 +461,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   apiRequestHandler: {fileID: 11490472}
+  audioController: {fileID: 11470300}
   playerController: {fileID: 11443866}
   ritualsController: {fileID: 11421326}
+  themeController: {fileID: 11466264}
   wwwController: {fileID: 11426124}
   viewReferences: {fileID: 11427152}
   ritualTypeMappings: {fileID: 11400000, guid: eefc667ded671433bbc99bf8626014e6, type: 2}
@@ -343,6 +477,30 @@ MonoBehaviour:
     roundEndAdvance: 5
     reignEndAdvance: 5
   generalPollingDelay: 0
+--- !u!114 &11466264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 193160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab1662f5d5b1949dfb9115d9bdc4263f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elementGroups:
+  - element: 0
+    mainSFX: {fileID: 8300000, guid: 55e19338ee9854ae6834e82e8120eada, type: 3}
+    backgroundEnvironment: {fileID: 0}
+  - element: 1
+    mainSFX: {fileID: 8300000, guid: 8eb81aaf9baf542a29ee6b6cd0534bc3, type: 3}
+    backgroundEnvironment: {fileID: 0}
+  - element: 2
+    mainSFX: {fileID: 8300000, guid: 895c534978a2544d5846fe531b2c0dd6, type: 3}
+    backgroundEnvironment: {fileID: 0}
+  - element: 3
+    mainSFX: {fileID: 8300000, guid: 85badcf1643574c44898ee08bc1eab25, type: 3}
+    backgroundEnvironment: {fileID: 0}
 --- !u!114 &11470300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,6 +512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b7f9de32066470ba2464f6e9d84c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxAudioSource: {fileID: 8254626}
 --- !u!114 &11490472
 MonoBehaviour:
   m_ObjectHideFlags: 1

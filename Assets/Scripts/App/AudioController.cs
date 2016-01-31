@@ -2,14 +2,12 @@
 using System.Collections;
 
 public class AudioController : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    
+    public AudioSource sfxAudioSource;
+    
+    public void PlaySound( AudioClip clip )
+    {
+        //Temp.
+        sfxAudioSource.PlayOneShot( clip );
+    }
 }

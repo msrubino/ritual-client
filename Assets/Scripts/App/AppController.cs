@@ -11,8 +11,10 @@ public class AppController : MonoBehaviour
     }
 
     public ApiRequestHandler    apiRequestHandler;
+    public AudioController      audioController;
     public PlayerController     playerController;
     public RitualsController    ritualsController;
+    public ThemeController      themeController;
     public WWWController        wwwController;
 
     public ViewReferences     viewReferences;
