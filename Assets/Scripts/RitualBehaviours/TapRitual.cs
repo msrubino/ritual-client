@@ -17,7 +17,10 @@ public class TapRitual : RitualBehaviorBase
         }
     }
 
-    public override void Begin() { }
+    public override void Begin() 
+    {
+        TapCount = 0; 
+    }
 
     public void OnMouseDown()
     {
@@ -26,7 +29,7 @@ public class TapRitual : RitualBehaviorBase
 
     private void CheckForCompletion()
     {
-        if (TapCount > numberOfTaps)
+        if (TapCount >= numberOfTaps)
         {
             Complete();
         }

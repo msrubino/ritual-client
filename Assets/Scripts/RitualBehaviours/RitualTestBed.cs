@@ -1,47 +1,75 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class FollowerDoRitualViewController : ViewControllerBase 
+public class RitualTestBed : MonoBehaviour
 {
 
+    public RitualType ritualType;
+    public RitualTypeMappings mappings;
+    public Text text;
+    public Text buttonText;
+
     private RitualBehaviorBase _ritualBehavior;
+    private RitualBehaviorBase _instantiatedRitualBehavior;
     private bool _didCompleteOrTimeout;
     private float _startTime;
     private bool _isSubscribedToRitualDidComplete;
-
+    private float _duration;
     private Coroutine _checkForTimeout;
-
-    private Ritual _ritual;
-    public Ritual Ritual
-    {
-        set { _ritual = value; }
-    }
+    private bool _isStarted;
 
     public void OnEnable()
     {
+        var mapping = mappings.GetMappingForType(ritualType);
+        _duration = mapping.duration;
+        _ritualBehavior = mapping.ritualBehavior;
+    }
+
+    public void OnButtonClick()
+    {
+        if (!_isStarted) StartRitual();
+        else RestartRitual();
+    }
+
+    private void StartRitual()
+    {
+        _isStarted = true;
         _didCompleteOrTimeout = false;
         _startTime = Time.time;
-
+        buttonText.text = "Restart";
         CreateRitualObject();
         _checkForTimeout = StartCoroutine(CheckForTimeout());
         BeginRitual();
     }
 
+    private void RestartRitual()
+    {
+        UnsubscribeToRitualDidComplete();
+        if (_instantiatedRitualBehavior != null && _instantiatedRitualBehavior.gameObject != null) Destroy(_instantiatedRitualBehavior.gameObject);
+        StartRitual();
+    }
+
     public void OnDisable() 
     {
-        Destroy(_ritualBehavior.gameObject);
+        if (_instantiatedRitualBehavior != null && _instantiatedRitualBehavior.gameObject != null) Destroy(_instantiatedRitualBehavior.gameObject);
     }
 
     private void CreateRitualObject()
     {
-        var ritualBehavior = AppController.Instance.ritualTypeMappings.GetRitualBehaviorForType(_ritual.RitualType);
-        _ritualBehavior = Instantiate(ritualBehavior, Vector3.zero, Quaternion.identity) as RitualBehaviorBase;
+        _instantiatedRitualBehavior = Instantiate(_ritualBehavior, Vector3.zero, Quaternion.identity) as RitualBehaviorBase;
     }
     
     private void BeginRitual()
     {
         SubscribeToRitualDidComplete();
-        _ritualBehavior.Begin();
+        _instantiatedRitualBehavior.Begin();
+    }
+
+    public void Update()
+    {
+        if (_didCompleteOrTimeout || !_isStarted) return;
+        text.text = string.Format("{0:0.0}", Time.unscaledTime - _startTime);
     }
 
     private IEnumerator CheckForTimeout()
@@ -60,65 +88,42 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private bool HasTimedOut()
     {
-        return Time.unscaledTime - _startTime >= _ritual.Duration;
+        return Time.unscaledTime - _startTime >= _duration;
     }
 
     private void Timeout()
     {
+        text.text = "Timed Out!";
         _didCompleteOrTimeout = true;
         UnsubscribeToRitualDidComplete();
-        StartCoroutine(CheckForResult());
-    }
-
-    private IEnumerator CheckForResult()
-    {
-        yield return StartCoroutine(_api.RitualResults());
-        AdvanceToAnnounceRoundWinner();
     }
 
     private void RitualDidComplete()
     {
         if (_didCompleteOrTimeout) return;
         _didCompleteOrTimeout = true;
-
+        text.text = "Complete";
         if (_checkForTimeout != null) 
         {
             StopCoroutine(_checkForTimeout);
             _checkForTimeout = null;
         }
-
-        StartCoroutine(PostResult());
-    }
-
-    private IEnumerator PostResult() {
-        yield return StartCoroutine(_api.PerformedRitual());
-        AdvanceToRitualComplete();
     }
 
     private void SubscribeToRitualDidComplete()
     {
         if (_isSubscribedToRitualDidComplete) return;
         _isSubscribedToRitualDidComplete = true;
-        _ritualBehavior.DidComplete += RitualDidComplete;
+        _instantiatedRitualBehavior.DidComplete += RitualDidComplete;
     }
 
     private void UnsubscribeToRitualDidComplete()
     {
         if (!_isSubscribedToRitualDidComplete) return;
         _isSubscribedToRitualDidComplete = false;
-        _ritualBehavior.DidComplete -= RitualDidComplete;
+        _instantiatedRitualBehavior.DidComplete -= RitualDidComplete;
     }
 
-    private void AdvanceToRitualComplete()
-    {
-        var ritualComplete = AppController.Instance.viewReferences.followerRitualCompleteView as FollowerRitualCompleteViewController;
-        ritualComplete.TimeToCheckForResult = _startTime + _ritual.TimeUntilStart;
-        TransitionToView(ritualComplete);
-    }
 
-    private void AdvanceToAnnounceRoundWinner()
-    {
-        TransitionToView(AppController.Instance.viewReferences.announceRoundWinnerView);
-    }
 
 }
