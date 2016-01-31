@@ -9,6 +9,8 @@ public class FollowerDoRitualViewController : ViewControllerBase
     private float _startTime;
     private bool _isSubscribedToRitualDidComplete;
 
+    private Coroutine _checkForTimeout;
+
     private Ritual _ritual;
     public Ritual Ritual
     {
@@ -18,10 +20,10 @@ public class FollowerDoRitualViewController : ViewControllerBase
     public void OnEnable()
     {
         _didCompleteOrTimeout = false;
-
         _startTime = Time.time;
+
         CreateRitualObject();
-        StartCoroutine(CheckForTimeout());
+        _checkForTimeout = StartCoroutine(CheckForTimeout());
         BeginRitual();
     }
 
@@ -78,6 +80,12 @@ public class FollowerDoRitualViewController : ViewControllerBase
     {
         if (_didCompleteOrTimeout) return;
         _didCompleteOrTimeout = true;
+
+        if (_checkForTimeout != null) 
+        {
+            StopCoroutine(_checkForTimeout);
+            _checkForTimeout = null;
+        }
 
         StartCoroutine(PostResult());
     }
