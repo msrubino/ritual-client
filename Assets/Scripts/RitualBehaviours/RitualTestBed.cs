@@ -92,7 +92,7 @@ public class RitualTestBed : MonoBehaviour
 
     private bool HasTimedOut()
     {
-        return Time.unscaledTime - _startTime >= _duration;
+        return Time.time - _startTime >= _duration;
     }
 
     private void Timeout()

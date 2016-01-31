@@ -24,6 +24,12 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
         SetTheme();
         CreateRitualObject();
+
+        if (_checkForTimeout != null)
+        {
+            _checkForTimeout = null;
+        }
+
         _checkForTimeout = StartCoroutine(CheckForTimeout());
         BeginRitual();
     }
@@ -72,7 +78,7 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private bool HasTimedOut()
     {
-        return Time.unscaledTime - _startTime >= _ritual.Duration;
+        return Time.time - _startTime >= _ritual.Duration;
     }
 
     private void Timeout()
@@ -90,6 +96,8 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private void RitualDidComplete()
     {
+        UnsubscribeToRitualDidComplete();
+
         if (_didCompleteOrTimeout) return;
         _didCompleteOrTimeout = true;
 
