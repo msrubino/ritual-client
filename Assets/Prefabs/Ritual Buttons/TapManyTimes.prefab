@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11419248}
   - 114: {fileID: 11490426}
   m_Layer: 5
-  m_Name: TapManyrTimes
+  m_Name: TapManyTimes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

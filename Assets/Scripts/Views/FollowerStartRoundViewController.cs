@@ -57,7 +57,7 @@ public class FollowerStartRoundViewController : ViewControllerBase
     private void AdvanceToLeaderFailed()
     {
         _players.SetCurrentLeader( _players.CurrentPollLeader );
-        newLeaderNameText.text = _players.CurrentPollLeader.name;
+        newLeaderNameText.text = _players.CurrentLeader.name;
 
         if ( _player.Uuid == _players.CurrentPollLeader.uuid )
         {

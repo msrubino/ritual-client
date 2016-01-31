@@ -19,6 +19,7 @@ public class TapRitual : RitualBehaviorBase
 
     public override void Begin() 
     {
+        _audio.SwitchDrum();
         TapCount = 0; 
     }
 
