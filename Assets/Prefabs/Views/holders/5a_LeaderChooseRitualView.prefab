@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &154422
 GameObject:
   m_ObjectHideFlags: 1
@@ -462,7 +462,7 @@ MonoBehaviour:
   m_CellSize: {x: 175, y: 175}
   m_Spacing: {x: 50, y: 50}
   m_Constraint: 1
-  m_ConstraintCount: 2
+  m_ConstraintCount: 3
 --- !u!114 &11480866
 MonoBehaviour:
   m_ObjectHideFlags: 1
