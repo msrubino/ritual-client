@@ -2,7 +2,7 @@
 
 public class RitualObj
 {
-    public int ritualType;
+    public int ritual_type;
     public float duration;
     public DateTime starts_at;
 }

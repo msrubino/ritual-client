@@ -38,7 +38,7 @@ public class FollowerStartRoundViewController : ViewControllerBase
 
     private void AdvanceToLeaderFailed()
     {
-        TransitionToView(AppController.Instance.viewReferences.leaderFailedView);
+        TransitionToView(AppController.Instance.viewReferences.wonReignView);
     }
 
     private void HandleRoundStarted()
