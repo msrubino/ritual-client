@@ -48,7 +48,7 @@ public class AudioController : MonoBehaviourBase {
             break;
 
             case ( AudioEffectType.TapDrum ):
-                if ( drumSource.isPlaying ) return;
+                //if ( drumSource.isPlaying ) return;
                 clipToPlay = _myDrum; //_drumClips[ Random.Range( 0, _drumClips.Length ) ];
                 audSource = drumSource;
             break;
@@ -78,8 +78,15 @@ public class AudioController : MonoBehaviourBase {
 
     void LoadDrums()
     {
-        _drumClips = Resources.LoadAll("drums") as AudioClip[]; 
-        Debug.Log( _drumClips );
+        Object[] dObjs = Resources.LoadAll("drums", typeof(AudioClip));
+
+        _drumClips = new AudioClip[dObjs.Length];
+        for( int i = 0; i < dObjs.Length; i++ )
+        {
+            _drumClips[i] = dObjs[i] as AudioClip;
+        }
+
+        SwitchDrum();
     }
 }
 
