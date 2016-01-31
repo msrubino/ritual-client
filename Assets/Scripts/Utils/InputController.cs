@@ -91,7 +91,6 @@ public class TouchInfo
 
     public TouchInfo( Vector2 position )
     {
-        Debug.Log( touch.fingerId );
         this.position = position;
     }
 
