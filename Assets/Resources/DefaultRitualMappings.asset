@@ -18,8 +18,7 @@ MonoBehaviour:
     ritualChooseButton: {fileID: 11490426, guid: cc318289e847945b6891861d1c15915f,
       type: 2}
     elementTheme: 1
-    leaderInstructions: Your followers must drum on their screens fifty times when
-      the ritual begins.
+    leaderInstructions: Guide everyone in drumming on their screens fifty times.
   - ritualType: 1
     duration: 10
     ritualBehavior: {fileID: 0}
@@ -39,4 +38,4 @@ MonoBehaviour:
     ritualChooseButton: {fileID: 11491256, guid: 8e4f9f78cf7994b7999922c728569f8c,
       type: 2}
     elementTheme: 2
-    leaderInstructions: Your followers must "Om" for ten seconds when the ritual begins.
+    leaderInstructions: Guide everyone in chanting for ten seconds.
