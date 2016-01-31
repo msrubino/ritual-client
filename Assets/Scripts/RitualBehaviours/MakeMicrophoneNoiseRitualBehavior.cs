@@ -17,7 +17,7 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
     float _maxLoudness = 0.8f;
 
     [SerializeField]
-    float _makeNoiseTimeThreshold = 3f;
+    float _makeNoiseTimeThreshold = 10f;
 
     float _makeNoiseSum = 0f;
     #endregion

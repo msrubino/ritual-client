@@ -13,6 +13,7 @@ public class RitualTypeMappings : ScriptableObject
         public RitualBehaviorBase ritualBehavior;
         public Button ritualChooseButton;
         public ElementTheme elementTheme;
+        public string leaderInstructions;
     }
 
     public Mapping[] mappings;

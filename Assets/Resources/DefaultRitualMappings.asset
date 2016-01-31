@@ -13,26 +13,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mappings:
   - ritualType: 0
-    duration: 10
+    duration: 20
     ritualBehavior: {fileID: 11441936, guid: 5706ac99b05ee41eb89bb12961076938, type: 2}
     ritualChooseButton: {fileID: 11490426, guid: cc318289e847945b6891861d1c15915f,
       type: 2}
     elementTheme: 1
+    leaderInstructions: Your followers must drum on their screens fifty times when
+      the ritual begins.
   - ritualType: 1
     duration: 10
     ritualBehavior: {fileID: 0}
-    ritualChooseButton: {fileID: 11417202, guid: 8439ccfe1e30d40bcb3177a59b0cb0f0,
-      type: 2}
+    ritualChooseButton: {fileID: 0}
     elementTheme: 0
+    leaderInstructions: 
   - ritualType: 2
     duration: 10
     ritualBehavior: {fileID: 0}
     ritualChooseButton: {fileID: 11491256, guid: c042cd28ba4694914a99a5f780653cea,
       type: 2}
     elementTheme: 3
+    leaderInstructions: 
   - ritualType: 3
-    duration: 10
+    duration: 20
     ritualBehavior: {fileID: 11408716, guid: ed97e9ff5dc7f439cbe24a311863248b, type: 2}
     ritualChooseButton: {fileID: 11491256, guid: 8e4f9f78cf7994b7999922c728569f8c,
       type: 2}
     elementTheme: 2
+    leaderInstructions: Your followers must "Om" for ten seconds when the ritual begins.

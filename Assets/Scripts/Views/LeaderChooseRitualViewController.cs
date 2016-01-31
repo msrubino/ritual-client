@@ -27,6 +27,8 @@ public class LeaderChooseRitualViewController : ViewControllerBase
 
     private void AddButton(RitualTypeMappings.Mapping mapping)
     {
+        if (mapping.ritualChooseButton == null) return;
+
         var button = Instantiate(mapping.ritualChooseButton, Vector3.zero, Quaternion.identity) as Button;
         var tr = button.transform;
         tr.SetParent(buttonParent, false);
