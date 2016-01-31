@@ -29516,7 +29516,7 @@ MonoBehaviour:
     roundReadyPoll: 0
     startRoundPoll: 0
     leaderStartReignAdvance: 5
-    leaderStartRoundAdvance: 5
+    leaderStartRoundAdvance: 10
     roundEndAdvance: 5
     reignEndAdvance: 5
   generalPollingDelay: 0
