@@ -132,7 +132,7 @@ public class FollowerDoRitualViewController : ViewControllerBase
     private void AdvanceToRitualComplete()
     {
         var ritualComplete = AppController.Instance.viewReferences.followerRitualCompleteView as FollowerRitualCompleteViewController;
-        ritualComplete.TimeToCheckForResult = _startTime + _ritual.TimeUntilStart;
+        ritualComplete.TimeToCheckForResult = _startTime + _ritual.TimeUntilStart + _ritual.Duration;
         TransitionToView(ritualComplete);
     }
 
