@@ -16,7 +16,6 @@ public class ViewReferences : MonoBehaviour
     public ViewControllerBase leaderWaitForRitualView;
     public ViewControllerBase wonReignView;
     public ViewControllerBase announceReignWinnerView;
-    public ViewControllerBase wonRoundView;
     public ViewControllerBase announceRoundWinnerView;
     public ViewControllerBase leaderFailedView;
 

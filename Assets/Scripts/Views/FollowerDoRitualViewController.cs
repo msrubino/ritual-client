@@ -58,6 +58,12 @@ public class FollowerDoRitualViewController : ViewControllerBase
     {
         _didCompleteOrTimeout = true;
         UnsubscribeToRitualDidComplete();
+        CheckForResult();
+    }
+
+    private void CheckForResult()
+    {
+        // check for result
         AdvanceToAnnounceRoundWinner();
     }
 
@@ -65,8 +71,8 @@ public class FollowerDoRitualViewController : ViewControllerBase
     {
         if (_didCompleteOrTimeout) return;
         _didCompleteOrTimeout = true;
-        // post ritual result
-        // parse ritual result response
+        // TODO post ritual result
+        // TODO parse ritual result response
         AdvanceToRitualComplete();
     }
 
@@ -90,11 +96,6 @@ public class FollowerDoRitualViewController : ViewControllerBase
         var ritualComplete = AppController.Instance.viewReferences.followerRitualCompleteView as FollowerRitualCompleteViewController;
         ritualComplete.TimeToCheckForResult = _startTime + _ritual.TimeUntilStart;
         TransitionToView(ritualComplete);
-    }
-
-    private void AdvanceToWonRound()
-    {
-        TransitionToView(AppController.Instance.viewReferences.wonRoundView);
     }
 
     private void AdvanceToAnnounceRoundWinner()

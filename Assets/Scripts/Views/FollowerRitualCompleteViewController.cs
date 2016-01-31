@@ -32,15 +32,7 @@ public class FollowerRitualCompleteViewController : ViewControllerBase
 
     private void AdvanceToRoundWinner()
     {
-        // if won round
-        // AdvanceToWonRound();
-        // else 
         // AdvanceToAnnounceRoundWinner();
-    }
-
-    private void AdvanceToWonRound()
-    {
-        TransitionToView(AppController.Instance.viewReferences.wonRoundView);
     }
 
     private void AdvanceToAnnounceRoundWinner()

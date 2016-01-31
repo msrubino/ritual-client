@@ -40,10 +40,4 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
     {
         TransitionToView(AppController.Instance.viewReferences.wonReignView);
     }
-    
-    private void AdvanceToRoundWon()
-    {
-        TransitionToView(AppController.Instance.viewReferences.wonRoundView);
-    }
-
 }
