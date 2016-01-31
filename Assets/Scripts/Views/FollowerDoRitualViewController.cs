@@ -58,10 +58,7 @@ public class FollowerDoRitualViewController : ViewControllerBase
     {
         _didCompleteOrTimeout = true;
         UnsubscribeToRitualDidComplete();
-        // if won round
-        AdvanceToWonRound();
-        // else
-        // AdvanceToAnnounceRoundWinner();
+        AdvanceToAnnounceRoundWinner();
     }
 
     private void RitualDidComplete()
