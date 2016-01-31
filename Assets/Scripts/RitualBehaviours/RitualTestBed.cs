@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
+using System;
 using UnityEngine.UI;
 using System.Collections;
 
 public class RitualTestBed : MonoBehaviour
 {
+
+    public event Action OnRitualDidComplete;
+    public event Action OnRitualDidTimeout;
 
     public RitualType ritualType;
     public RitualTypeMappings mappings;
@@ -96,11 +100,13 @@ public class RitualTestBed : MonoBehaviour
         text.text = "Timed Out!";
         _didCompleteOrTimeout = true;
         UnsubscribeToRitualDidComplete();
+        if (OnRitualDidTimeout != null) OnRitualDidTimeout();
     }
 
     private void RitualDidComplete()
     {
         if (_didCompleteOrTimeout) return;
+        if (OnRitualDidComplete != null) OnRitualDidComplete();
         _didCompleteOrTimeout = true;
         text.text = "Complete";
         if (_checkForTimeout != null) 
