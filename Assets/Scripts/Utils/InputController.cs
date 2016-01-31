@@ -38,6 +38,8 @@ public class InputController : MonoBehaviourBase
         } else if ( Input.GetMouseButtonUp( 0 ) ) {
 
             newTouch = GetTouchById( 0 );
+
+            if ( newTouch == null ) return;
             newTouch.Update( Input.mousePosition );
 
             _inputSettings.ReportTouchEnded( newTouch );
@@ -45,6 +47,7 @@ public class InputController : MonoBehaviourBase
 
         } else if ( Input.GetMouseButton( 0 ) ) {
             newTouch = GetTouchById( 0 );
+            if ( newTouch == null ) return;
             newTouch.Update( Input.mousePosition );
 
             _inputSettings.ReportTouchMoved( newTouch );
@@ -63,12 +66,14 @@ public class InputController : MonoBehaviourBase
                 _inputSettings.ReportTouchBegan( newTouch );
             } else if ( t.phase == TouchPhase.Ended ) {
                 newTouch = GetTouchById( id );
+                if ( newTouch == null ) return;
                 newTouch.Update( t );
 
                 _inputSettings.ReportTouchEnded( newTouch );
                 _currentTouches.Remove( newTouch );
             } else if ( t.phase == TouchPhase.Moved ) {
                 newTouch = GetTouchById( id );
+                if ( newTouch == null ) return;
                 newTouch.Update( t );
 
                 _inputSettings.ReportTouchMoved( newTouch );
