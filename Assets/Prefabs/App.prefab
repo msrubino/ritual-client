@@ -320,7 +320,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -466,6 +466,7 @@ MonoBehaviour:
   ritualsController: {fileID: 11421326}
   themeController: {fileID: 11466264}
   wwwController: {fileID: 11426124}
+  infoHud: {fileID: 0}
   viewReferences: {fileID: 11427152}
   ritualTypeMappings: {fileID: 11400000, guid: eefc667ded671433bbc99bf8626014e6, type: 2}
   appTimes:

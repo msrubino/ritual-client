@@ -16,6 +16,13 @@ public abstract class ViewControllerBase : MonoBehaviourBase
     {
         GameObject.SetActive(false);
         view.GameObject.SetActive(true);
+
+        // SFX
+        _audio.PlaySound( AudioEffectType.ViewSwitch );
+
+        // Debug
+        string log = "Now in: " + view.name ;
+        _infoHud.Log( log );
     }
 
 }
