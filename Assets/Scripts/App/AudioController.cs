@@ -12,10 +12,12 @@ public class AudioController : MonoBehaviourBase {
 
     public AudioClip[] viewSwitchClips;
     AudioClip[] _drumClips;
+    AudioClip[] _shakerClips;
     
     void Awake()
     {
         LoadDrums();
+        LoadShakers();
     }
 
     void OnEnable()
@@ -77,6 +79,12 @@ public class AudioController : MonoBehaviourBase {
         return _myDrum;
     }
 
+    public AudioClip SwitchShaker()
+    {
+        _myDrum = _shakerClips[ Random.Range( 0, _shakerClips.Length ) ];
+        return _myDrum;
+    }
+
     void LoadDrums()
     {
         Object[] dObjs = Resources.LoadAll("drums", typeof(AudioClip));
@@ -88,6 +96,17 @@ public class AudioController : MonoBehaviourBase {
         }
 
         SwitchDrum();
+    }
+
+    void LoadShakers()
+    {
+        Object[] dObjs = Resources.LoadAll("shakers", typeof(AudioClip));
+
+        _shakerClips = new AudioClip[dObjs.Length];
+        for( int i = 0; i < dObjs.Length; i++ )
+        {
+            _shakerClips[i] = dObjs[i] as AudioClip;
+        }
     }
 }
 

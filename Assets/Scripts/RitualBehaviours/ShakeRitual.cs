@@ -25,7 +25,7 @@ public class ShakeRitual : RitualBehaviorBase
 
     public override void Begin() 
     {
-        _drumTime = _audio.SwitchDrum().length;
+        // _drumTime = _audio.SwitchShaker().length;
         _startTime = Time.time;
         ShakeTime = 0f;
     }
@@ -37,6 +37,7 @@ public class ShakeRitual : RitualBehaviorBase
             ShakeTime += Time.deltaTime;
             if (Time.time - _lastDrumTime > _drumTime)
             {
+                _drumTime = _audio.SwitchShaker().length;
                 _audio.PlaySound( AudioEffectType.TapDrum );
                 _lastDrumTime = Time.time;
             }
