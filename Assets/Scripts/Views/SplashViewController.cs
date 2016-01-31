@@ -11,9 +11,10 @@ public class SplashViewController : ViewControllerBase
 
     private void AdvanceToNextView()
     {
-        bool hasIdentity = _app.playerController.HasJoinedServerWithName();
-
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
+
+            bool hasIdentity = _app.playerController.HasJoinedServerWithName();
+            
             if ( hasIdentity ) 
             {
                 Debug.Log( "Has identity." );
@@ -27,11 +28,21 @@ public class SplashViewController : ViewControllerBase
 
     private void HandleExistingUser()
     {
-        // send uuid to server
-        // if round ready
-        AdvanceToStartRound();
-        // else
-        // AdvanceToPregame();
+        StartCoroutine( CheckServerForLeader() );
+    }
+
+    private IEnumerator CheckServerForLeader()
+    {
+        yield return StartCoroutine( _api.Join() );
+
+        if ( _rituals.WaitingForCurrentRitualToFinish() )
+        {
+            Debug.Log( "Waiting for current ritual to finish." );
+            AdvanceToPregame();
+        } else {
+            Debug.Log( "Ready to start round." );
+            AdvanceToStartRound();
+        }
     }
 
     private void AdvanceToPregame()

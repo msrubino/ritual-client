@@ -15,7 +15,6 @@ public class ApiRequestHandler : MonoBehaviourBase
         if ( HasRequestError( request.error ) ) yield break;
 
         RitualObj currentRitual = JsonUtility.FromJson<RitualObj>( request.text );
-        Debug.Log( currentRitual );
 
         RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( request.text );
         Debug.Log( leader );
@@ -39,9 +38,18 @@ public class ApiRequestHandler : MonoBehaviourBase
 
         string leaderJSON = JsonHelper.GetJsonObject( request.text, "leader" );
         RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( leaderJSON );
+        _players.SetCurrentLeader( leader );
 
-        RitualObj ritual = JsonUtility.FromJson<RitualObj>( request.text );
+        string ritualJSON = JsonHelper.GetJsonObject( request.text, "ritual" );
+        if ( ritualJSON != null )
+        {
+            _rituals.SetCurrentRitual( null );
+        } else {
+            RitualObj ritual = JsonUtility.FromJson<RitualObj>( request.text );
+            _rituals.SetCurrentRitual( ritual );
+        }
 
+        //TODO Nec'y?
         _player.IsLeader = leader.uuid == _player.Uuid ;
 
         PlayerPrefs.SetString( _app.playerController.playerPrefsNameKey, _player.Username );

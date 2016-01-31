@@ -29,10 +29,13 @@ public class JoinViewController : ViewControllerBase
     private IEnumerator DoJoin()
     {
         yield return StartCoroutine( _api.Join() );
-        // if round ready
-        // AdvanceToStartRound();
-        // else
-        AdvanceToPregame();
+
+        if ( _rituals.WaitingForCurrentRitualToFinish() )
+        {
+            AdvanceToPregame();
+        } else {
+            AdvanceToStartRound();
+        }
     }
 
     private void AdvanceToPregame()
