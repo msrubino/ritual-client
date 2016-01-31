@@ -10,6 +10,10 @@ public class InputSettings : Settings<InputSettings>
     public event Action<TouchInfo> OnTouchEnded = DefaultAction;
     public event Action<TouchInfo> OnTouchMoved = DefaultAction;
 
+    public static void DefaultAction() {}
+    
+    public event Action OnInputGo = DefaultAction;
+
     public void ReportTouchBegan( TouchInfo touch )
     {
         OnTouchBegan( touch );
