@@ -51,6 +51,11 @@ public class PlayerController : MonoBehaviourBase
     {
         CurrentPollLeader = pollLeader;
         Debug.Log( "Setting the current poll leader -- " + pollLeader.name );
+
+        if ( CurrentLeader == null )
+        {
+            SetCurrentLeader( CurrentPollLeader );
+        }
     }
 
     public void SetLastRitualWinner( RitualPlayer winner )

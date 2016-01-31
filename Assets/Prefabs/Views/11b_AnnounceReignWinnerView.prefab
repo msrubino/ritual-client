@@ -156,7 +156,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Name Is The Most Devout
+  m_Text: Name Has Been Chosen
 --- !u!114 &11495702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6cdacb472eed4a92b105e569d489eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reignWinner: {fileID: 11484418}
 --- !u!114 &11497846
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -54,6 +54,7 @@ public class FollowerStartRoundViewController : ViewControllerBase
 
     private void AdvanceToLeaderFailed()
     {
+        _players.SetCurrentLeader( _players.CurrentPollLeader );
         if ( _player.Uuid == _players.CurrentPollLeader.uuid )
         {
             TransitionToView(AppController.Instance.viewReferences.wonReignView);
@@ -63,7 +64,6 @@ public class FollowerStartRoundViewController : ViewControllerBase
             TransitionToView(AppController.Instance.viewReferences.announceReignWinnerView);
         }
 
-        _players.SetCurrentLeader( _players.CurrentPollLeader );
     }
 
     private void AdvanceToCountdown()
