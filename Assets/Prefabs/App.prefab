@@ -16,6 +16,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &124618
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 462942}
+  m_Layer: 0
+  m_Name: RitualsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &130366
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +91,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449400}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &421342
 Transform:
   m_ObjectHideFlags: 1
@@ -113,9 +128,22 @@ Transform:
   m_Children:
   - {fileID: 421342}
   - {fileID: 432558}
+  - {fileID: 462942}
   - {fileID: 402838}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &462942
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124618}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 449400}
+  m_RootOrder: 2
 --- !u!114 &11426124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,7 +158,11 @@ MonoBehaviour:
   isLocal: 1
   remoteURL: http://ritual.herokuapp.com/
   localURL: http://localhost:9393/
+  currentRitualRoute: current_ritual
+  declareRitualRoute: declare_ritual
   joinRoute: join
+  performedRitualRoute: performed_ritual
+  ritualResultsRoute: ritual_results
 --- !u!114 &11427152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,6 +177,7 @@ MonoBehaviour:
   joinView: {fileID: 0}
   pregameView: {fileID: 0}
   followerStartRoundView: {fileID: 0}
+  ritualCountdownView: {fileID: 0}
   leaderStartRoundView: {fileID: 0}
   leaderStartReignView: {fileID: 0}
   followerDoRitualView: {fileID: 0}
@@ -155,6 +188,7 @@ MonoBehaviour:
   announceReignWinnerView: {fileID: 0}
   wonRoundView: {fileID: 0}
   announceRoundWinnerView: {fileID: 0}
+  leaderFailedView: {fileID: 0}
 --- !u!114 &11443866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252f6df971bcf4d42a5d7a93b686cde6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefsNameKey: JOINED_WITH_NAME
   shouldSpoofUuid: 1
 --- !u!114 &11465896
 MonoBehaviour:
@@ -180,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   apiRequestHandler: {fileID: 11490472}
   playerController: {fileID: 11443866}
+  ritualsController: {fileID: 0}
   wwwController: {fileID: 11426124}
   viewReferences: {fileID: 11427152}
   ritualTypeMappings: {fileID: 11400000, guid: eefc667ded671433bbc99bf8626014e6, type: 2}
