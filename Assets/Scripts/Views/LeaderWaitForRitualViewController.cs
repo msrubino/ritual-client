@@ -8,6 +8,8 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
     [SerializeField]
     Text _ritualBegin, _informFollowers;
 
+    string _originalText;
+
     private float _duration;
     public float Duration
     {
@@ -17,10 +19,20 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
     public string LeaderInstructions { get; set; }
     public ElementTheme CurrentTheme { get; set; }
 
+    void Awake() 
+    {
+        _originalText = _ritualBegin.text;
+    }
+
     public void OnEnable()
     {
         _informFollowers.text = LeaderInstructions;
         DelayedCheckForResult();
+    }
+
+    void OnDisable()
+    {
+        _ritualBegin.text = _originalText;
     }
 
     private void DelayedCheckForResult()

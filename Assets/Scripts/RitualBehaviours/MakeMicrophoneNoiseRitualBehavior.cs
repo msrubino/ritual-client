@@ -31,6 +31,10 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
         Begin();
     }
 
+    void OnEnable() {
+        _micControl.sensitivity = 7f;
+    }
+
     public override void Begin ()
     {
         _startTime = Time.time;
