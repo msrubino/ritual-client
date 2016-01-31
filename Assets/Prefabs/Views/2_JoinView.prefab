@@ -184,12 +184,12 @@ GameObject:
   - 114: {fileID: 11478854}
   - 114: {fileID: 11401880}
   m_Layer: 5
-  m_Name: JoinView
+  m_Name: 2_JoinView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &180824
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,9 +714,9 @@ MonoBehaviour:
   fillColor2: {r: 0.13786764, g: 0.2687373, b: 0.75, a: 1}
   UVMapping1: 0
   UVMapping2: 0
-  gradientOffset: {x: 1.7554986, y: -8.12536}
+  gradientOffset: {x: 1.7554986, y: -8.125598}
   gradientAngle: 175.83736
-  gradientScale: 0.061987877
+  gradientScale: 0.061986953
   textureOffset: {x: -5, y: -5}
   textureAngle: 0
   textureScale: 0.1
@@ -788,22 +788,22 @@ MonoBehaviour:
     points:
     - point: {x: 20.004562, y: 20.024538, z: 0}
       inCtrl: {x: -9.993129, y: 0.02865982, z: 0}
-      outCtrl: {x: 0.0041675568, y: -9.973997, z: 0}
+      outCtrl: {x: 0.004085541, y: -9.973997, z: 0}
       widthMultiplier: 1
       natural: 0
     - point: {x: 20.004562, y: -19.979877, z: 0}
-      inCtrl: {x: 0.0041675568, y: 10.024867, z: 0}
+      inCtrl: {x: 0.004085541, y: 10.024867, z: 0}
       outCtrl: {x: -9.993129, y: 0.024360657, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -19.9959, y: -19.979877, z: 0}
-      inCtrl: {x: 10.006939, y: 0.024360657, z: 0}
+    - point: {x: -19.996063, y: -19.979877, z: 0}
+      inCtrl: {x: 10.00694, y: 0.024360657, z: 0}
       outCtrl: {x: 0.005475998, y: 10.024867, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -19.9959, y: 20.024538, z: 0}
+    - point: {x: -19.996063, y: 20.024538, z: 0}
       inCtrl: {x: 0.005475998, y: -9.973997, z: 0}
-      outCtrl: {x: 10.006939, y: 0.02865982, z: 0}
+      outCtrl: {x: 10.00694, y: 0.02865982, z: 0}
       widthMultiplier: 1
       natural: 0
     PercentPrecalcNormals: 0

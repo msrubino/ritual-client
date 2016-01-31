@@ -13,12 +13,12 @@ GameObject:
   - 114: {fileID: 11446176}
   - 114: {fileID: 11435234}
   m_Layer: 5
-  m_Name: FollowerDoRitualView
+  m_Name: 6b_7b_8b_FollowerDoRitualView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &118512
 GameObject:
   m_ObjectHideFlags: 0
