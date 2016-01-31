@@ -34,7 +34,7 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private void CreateRitualObject()
     {
-        var ritualBehavior = AppController.Instance.ritualTypeMappings.GetRitualForType(_ritual.RitualType);
+        var ritualBehavior = AppController.Instance.ritualTypeMappings.GetRitualBehaviorForType(_ritual.RitualType);
         _ritualBehavior = Instantiate(ritualBehavior, Vector3.zero, Quaternion.identity) as RitualBehaviorBase;
     }
     
