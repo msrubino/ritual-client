@@ -86,7 +86,7 @@ public class ApiRequestHandler : MonoBehaviourBase
         WWW request = CreateRitualResultsRequest();
         yield return request;
 
-        if ( HasRequestError( request.error ) ) yield break;
+        //if ( HasRequestError( request.error ) ) yield break;
         
         string winnerJSON = JsonHelper.GetJsonObject( request.text, "winner" );
         RitualPlayer winner = JsonUtility.FromJson<RitualPlayer>( winnerJSON );

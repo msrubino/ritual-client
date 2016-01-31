@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.697}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -50,7 +50,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 5e4d337ce68664a8ca2c0c3625ea8879, type: 3}
+    m_Font: {fileID: 12800000, guid: 205de89f030b94b5cae11f08ff8d8299, type: 3}
     m_FontSize: 18
     m_FontStyle: 0
     m_BestFit: 1
@@ -119,7 +119,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.697
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.r
@@ -136,7 +136,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 5e4d337ce68664a8ca2c0c3625ea8879,
+      objectReference: {fileID: 12800000, guid: 205de89f030b94b5cae11f08ff8d8299,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

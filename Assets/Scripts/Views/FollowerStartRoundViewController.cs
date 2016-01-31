@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class FollowerStartRoundViewController : ViewControllerBase
 {
+    public Text newLeaderNameText;
     public void OnEnable()
     {
         StartCoroutine( PollForRitualStarted() );
@@ -55,6 +57,8 @@ public class FollowerStartRoundViewController : ViewControllerBase
     private void AdvanceToLeaderFailed()
     {
         _players.SetCurrentLeader( _players.CurrentPollLeader );
+        newLeaderNameText.text = _players.CurrentPollLeader.name;
+
         if ( _player.Uuid == _players.CurrentPollLeader.uuid )
         {
             TransitionToView(AppController.Instance.viewReferences.wonReignView);
