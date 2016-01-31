@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 public class RitualObj
 {
     public int ritualType;

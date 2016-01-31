@@ -6,6 +6,14 @@ public class ApiRequestHandler : MonoBehaviourBase
 {
     private Dictionary<string, object> _fields = new Dictionary<string, object>();
 
+    public IEnumerator DeclareRitual()
+    {
+        WWW request = CreateDeclareRitualRequest();
+        yield return request;
+
+        if ( HasRequestError( request.error ) ) yield break;
+    }
+
     public IEnumerator Join()
     {
         WWW request = CreateJoinRequest(); 
@@ -30,6 +38,19 @@ public class ApiRequestHandler : MonoBehaviourBase
         yield return request;
 
         if ( HasRequestError( request.error ) ) yield break;
+    }
+
+    private WWW CreateDeclareRitualRequest()
+    {
+        string url = _www.declareRitualURL;
+
+        _fields.Clear();
+        _fields.Add( "uuid", _player.Uuid );
+        _fields.Add( "ritual_type", (int)_rituals.CurrentRitual.RitualType );
+        _fields.Add( "duration", _rituals.CurrentRitual.Duration );
+        _fields.Add( "starts_in", _rituals.CurrentRitual.TimeUntilStart );
+
+        return CreatePOSTRequest( url, _fields );
     }
 
     private WWW CreateJoinRequest()
