@@ -417,6 +417,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &155946
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 494444}
+  - 114: {fileID: 11496792}
+  - 23: {fileID: 2359296}
+  - 33: {fileID: 3391568}
+  m_Layer: 0
+  m_Name: Background_Black (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &156958
 GameObject:
   m_ObjectHideFlags: 1
@@ -664,7 +682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &175468
 GameObject:
   m_ObjectHideFlags: 1
@@ -698,7 +716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &180210
 GameObject:
   m_ObjectHideFlags: 1
@@ -749,7 +767,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &183490
 GameObject:
   m_ObjectHideFlags: 1
@@ -1009,6 +1027,7 @@ Transform:
   m_Children:
   - {fileID: 432090}
   - {fileID: 499826}
+  - {fileID: 494444}
   - {fileID: 433838}
   m_Father: {fileID: 435910}
   m_RootOrder: 0
@@ -1143,7 +1162,7 @@ Transform:
   m_LocalScale: {x: 0.16298331, y: 0.29694995, z: 0.041975044}
   m_Children: []
   m_Father: {fileID: 417076}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &435910
 Transform:
   m_ObjectHideFlags: 1
@@ -1514,6 +1533,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 451248}
   m_RootOrder: 1
+--- !u!4 &494444
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155946}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.07041931, y: 0, z: 49.626762}
+  m_LocalScale: {x: 0.76584506, y: 0.76584506, z: 0.76584506}
+  m_Children: []
+  m_Father: {fileID: 417076}
+  m_RootOrder: 2
 --- !u!4 &494524
 Transform:
   m_ObjectHideFlags: 1
@@ -1997,6 +2028,32 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183490}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: b9e0b81f88d9d994dbec43692d08d3c7, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!23 &2359296
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155946}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -2741,6 +2798,13 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 140766}
+  m_Mesh: {fileID: 0}
+--- !u!33 &3391568
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155946}
   m_Mesh: {fileID: 0}
 --- !u!33 &3392350
 MeshFilter:
@@ -9777,6 +9841,136 @@ MonoBehaviour:
     - point: {x: -0.44470188, y: 30.893824, z: 0}
       inCtrl: {x: -10.003089, y: -10.213636, z: 0}
       outCtrl: {x: 9.892755, y: -11.5475235, z: 0}
+      widthMultiplier: 1
+      natural: 0
+    PercentPrecalcNormals: 0
+    Triangulate: 0
+  lowQualityRender: 0
+  inverseTriangleDrawOrder: 0
+  overLappingVertsShift: 0.01
+  CachedFillMaterial: {fileID: 0}
+  Cached3DFillMaterial: {fileID: 0}
+  Cached3DAAMaterial: {fileID: 0}
+  DestroyFarseerNow: 0
+  ShowTriangleCount: 0
+  FarseerPhysicsPointsOnly: 0
+  PhysicsIsTrigger: 0
+  WorldAaWidth: 0
+--- !u!114 &11496792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03351eef812632d4ba150c732aaedbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: 0
+  outlineColor1: {r: 0, g: 0, b: 0, a: 1}
+  outlineColor2: {r: 0, g: 0, b: 0, a: 1}
+  OutlineWidth: 1
+  outlineTexturingScale: 10
+  outlineGradient: 0
+  outlineNormalOffset: 0
+  corners: 1
+  fill: 2
+  landscapeBottomDepth: 10
+  fillColor1: {r: 0.13429932, g: 0.39705884, b: 0.386186, a: 1}
+  fillColor2: {r: 0.010380622, g: 0.020737378, b: 0.058823526, a: 1}
+  UVMapping1: 0
+  UVMapping2: 0
+  gradientOffset: {x: 1.7554933, y: -8.12561}
+  gradientAngle: 175.83736
+  gradientScale: 0.061987054
+  textureOffset: {x: -5, y: -5}
+  textureAngle: 0
+  textureScale: 0.1
+  textureOffset2: {x: 5, y: 5}
+  textureAngle2: 0
+  textureScale2: 0.1
+  emboss: 0
+  embossColor1: {r: 1, g: 1, b: 1, a: 1}
+  embossColor2: {r: 0, g: 0, b: 0, a: 1}
+  embossAngle: 180
+  embossOffset: 0.5
+  embossSize: 10
+  embossCurveSmoothness: 3
+  physics: 0
+  createPhysicsInEditor: 0
+  createConvexMeshCollider: 0
+  physicsMaterial: {fileID: 0}
+  physicsMaterial2D: {fileID: 0}
+  _vertexDensity: 1
+  vertexCount: 4
+  optimizedVertexCount: 64
+  physicsColliderCount: 32
+  LockPhysicsToAppearence: 0
+  colliderZDepth: 100
+  colliderNormalOffset: 0
+  boxColliderDepth: 1
+  _boxColliders: []
+  lastPhysicsVertsCount: 0
+  antiAliasingWidth: 0
+  landscapeOutlineAlign: 1
+  maxBeakLength: 3
+  optimize: 1
+  optimizeAngle: 5
+  showCoordinates: 0
+  gridSize: 5
+  gridColor: {r: 1, g: 1, b: 1, a: 0.2}
+  showGrid: 1
+  gridExpansion: 2
+  snapToGrid: 1
+  snapHandlesToGrid: 1
+  showNumberInputs: 1
+  style: {fileID: 0}
+  defaultStyleName: Stylename
+  styleLocalGradientPositioning: 0
+  styleLocalTexturePositioning: 0
+  styleLocalEmbossPositioning: 0
+  styleLocalAntialiasing: 0
+  styleLocalVertexCount: 0
+  styleLocalPhysicsColliderCount: 0
+  hideHandles: 0
+  FlattenZ: 1
+  FixOverlaps: 1
+  isDirty: 0
+  PinUvs: 0
+  AutoRefresh: 0
+  AutoRefreshDelay: 0.15
+  AutoRefreshDelayRandomize: 1
+  PerspectiveMode: 0
+  CurrentPerspective: 0
+  _mFilter: {fileID: 3391568}
+  spline:
+    precalcNormals:
+    - {x: 0.7079625, y: 0.7062501, z: 0}
+    - {x: 0.70611626, y: -0.70809597, z: 0}
+    - {x: -0.7064493, y: -0.7077636, z: -0}
+    - {x: -0.7082938, y: 0.70591766, z: 0}
+    - {x: 0.7079625, y: 0.7062501, z: 0}
+    precalcPositions: []
+    points:
+    - point: {x: 20.004578, y: 20.024536, z: 0}
+      inCtrl: {x: -9.993134, y: 0.028686523, z: 0}
+      outCtrl: {x: 0.0040893555, y: -9.973999, z: 0}
+      widthMultiplier: 1
+      natural: 0
+    - point: {x: 20.004578, y: -19.979858, z: 0}
+      inCtrl: {x: 0.0040893555, y: 10.024841, z: 0}
+      outCtrl: {x: -9.993134, y: 0.024353027, z: 0}
+      widthMultiplier: 1
+      natural: 0
+    - point: {x: -19.996155, y: -19.979858, z: 0}
+      inCtrl: {x: 10.0069275, y: 0.024353027, z: 0}
+      outCtrl: {x: 0.0054626465, y: 10.024841, z: 0}
+      widthMultiplier: 1
+      natural: 0
+    - point: {x: -19.996155, y: 20.024536, z: 0}
+      inCtrl: {x: 0.0054626465, y: -9.973999, z: 0}
+      outCtrl: {x: 10.0069275, y: 0.028686523, z: 0}
       widthMultiplier: 1
       natural: 0
     PercentPrecalcNormals: 0
