@@ -669,9 +669,9 @@ MonoBehaviour:
   fillColor2: {r: 1, g: 0.3554217, b: 0, a: 1}
   UVMapping1: 0
   UVMapping2: 0
-  gradientOffset: {x: 3.3602955, y: 42.53418}
+  gradientOffset: {x: 3.360544, y: 42.534855}
   gradientAngle: 178.861
-  gradientScale: 0.51615715
+  gradientScale: 0.5163463
   textureOffset: {x: 6.41453, y: 24.834902}
   textureAngle: 0
   textureScale: 0.09999823
@@ -765,39 +765,39 @@ MonoBehaviour:
     - {x: -0.2953423, y: 0.95539147, z: 0}
     precalcPositions: []
     points:
-    - point: {x: 5.599853, y: 46.57667, z: 0}
-      inCtrl: {x: -3.6496353, y: -1.3849525, z: 0}
-      outCtrl: {x: 3.231691, y: 0.7815895, z: 0}
+    - point: {x: 5.600028, y: 46.575916, z: 0.000003695488}
+      inCtrl: {x: -3.650015, y: -1.3851509, z: 0}
+      outCtrl: {x: 3.2314425, y: 0.7820053, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 10.628776, y: 47.483845, z: 0}
-      inCtrl: {x: -0.98652077, y: 0.19932556, z: 0}
-      outCtrl: {x: -0.2338829, y: -1.0317078, z: 0}
+    - point: {x: 10.628628, y: 47.484787, z: 0.000003695488}
+      inCtrl: {x: -0.9862242, y: 0.19966507, z: 0}
+      outCtrl: {x: -0.2342701, y: -1.0315781, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 9.841398, y: 30.53869, z: 0}
-      inCtrl: {x: 1.8457165, y: -7.6579285, z: 0}
-      outCtrl: {x: -1.4228916, y: -6.277157, z: 0}
+    - point: {x: 9.84145, y: 30.538532, z: 0.000003695488}
+      inCtrl: {x: 1.8454857, y: -7.6578445, z: 0}
+      outCtrl: {x: -1.4228172, y: -6.2768536, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 4.953918, y: 35.141113, z: 0}
-      inCtrl: {x: 1.9589543, y: -0.8921814, z: 0}
-      outCtrl: {x: -1.0801237, y: 0.4923401, z: 0}
+    - point: {x: 4.953739, y: 35.141144, z: 0.000003695488}
+      inCtrl: {x: 1.9593439, y: -0.8922348, z: 0}
+      outCtrl: {x: -1.0804236, y: 0.4929161, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 1.3572261, y: 26.833115, z: 0}
-      inCtrl: {x: 1.0012991, y: -1.2771187, z: 0}
-      outCtrl: {x: -0.50014895, y: 0.6380291, z: 0}
+    - point: {x: 1.3569676, y: 26.83232, z: 0.000003695488}
+      inCtrl: {x: 1.0009688, y: -1.2770004, z: 0}
+      outCtrl: {x: -0.5004845, y: 0.6385021, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -0.047293585, y: 36.807426, z: 0}
-      inCtrl: {x: 0.45379114, y: 0.00016021729, z: 0}
-      outCtrl: {x: -0.7800979, y: 0.0009651184, z: 0}
+    - point: {x: -0.047010392, y: 36.807068, z: 0.000003695488}
+      inCtrl: {x: 0.45379448, y: 0, z: 0}
+      outCtrl: {x: -0.77980566, y: 0, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -2.982953, y: 43.667454, z: 0}
-      inCtrl: {x: 0.48169374, y: -0.6077957, z: 0}
-      outCtrl: {x: 1.6861261, y: 0.55558777, z: 0}
+    - point: {x: -2.9827495, y: 43.668346, z: 0.000003695488}
+      inCtrl: {x: 0.48164463, y: -0.6072998, z: 0}
+      outCtrl: {x: 1.6857564, y: 0.5553093, z: 0}
       widthMultiplier: 1
       natural: 0
     PercentPrecalcNormals: 0
@@ -871,9 +871,9 @@ MonoBehaviour:
   fillColor2: {r: 0.50735295, g: 0.21158433, b: 0.048496958, a: 0.491}
   UVMapping1: 0
   UVMapping2: 0
-  gradientOffset: {x: 3.3602955, y: 42.53418}
+  gradientOffset: {x: 3.360544, y: 42.534855}
   gradientAngle: 178.861
-  gradientScale: 0.51615715
+  gradientScale: 0.5163463
   textureOffset: {x: 6.41453, y: 24.834902}
   textureAngle: 0
   textureScale: 0.09999823
@@ -945,34 +945,34 @@ MonoBehaviour:
     - {x: -0.23841003, y: 0.97116464, z: 0}
     precalcPositions: []
     points:
-    - point: {x: 4.4733105, y: 46.179386, z: 0}
-      inCtrl: {x: -1.8817356, y: -0.45404816, z: 0}
-      outCtrl: {x: 3.2316914, y: 0.78048706, z: 0}
+    - point: {x: 4.4729137, y: 46.178673, z: -0.00000047683716}
+      inCtrl: {x: -1.8815267, y: -0.45340347, z: 0}
+      outCtrl: {x: 3.2314425, y: 0.7799225, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 10.315833, y: 47.56324, z: 0}
-      inCtrl: {x: -1.6749582, y: 0.39698792, z: 0}
-      outCtrl: {x: -0.7189894, y: -2.3320541, z: 0}
+    - point: {x: 10.315722, y: 47.563824, z: -0.00000047683716}
+      inCtrl: {x: -1.675108, y: 0.3972473, z: 0}
+      outCtrl: {x: -0.7191906, y: -2.3314667, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 8.308049, y: 43.33087, z: 0}
-      inCtrl: {x: 1.2824488, y: 4.61697, z: 0}
-      outCtrl: {x: -2.7762413, y: 0.7765503, z: 0}
+    - point: {x: 8.30805, y: 43.331417, z: -0.00000047683716}
+      inCtrl: {x: 1.2827482, y: 4.6171684, z: 0}
+      outCtrl: {x: -2.7760096, y: 0.77576447, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 0.6411487, y: 42.84595, z: 0}
-      inCtrl: {x: 3.0252652, y: -0.000049591064, z: 0}
-      outCtrl: {x: -0.78009754, y: 0, z: 0}
+    - point: {x: 0.6410535, y: 42.846825, z: -0.00000047683716}
+      inCtrl: {x: 3.0250235, y: 0, z: 0}
+      outCtrl: {x: -0.7798057, y: 0, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -2.9203663, y: 43.70719, z: 0}
-      inCtrl: {x: 0.48169398, y: -0.60779953, z: 0}
-      outCtrl: {x: -0.8335984, y: 1.0356865, z: 0}
+    - point: {x: -2.920496, y: 43.707867, z: -0.00000047683716}
+      inCtrl: {x: 0.48164463, y: -0.60731125, z: 0}
+      outCtrl: {x: -0.8338678, y: 1.0357437, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 0.60911983, y: 45.04153, z: 0}
-      inCtrl: {x: 2.6212559, y: 1.0682297, z: 0}
-      outCtrl: {x: -0.25470206, y: -0.6965637, z: 0}
+    - point: {x: 0.6091076, y: 45.04101, z: -0.00000047683716}
+      inCtrl: {x: 2.6211958, y: 1.069027, z: 0}
+      outCtrl: {x: -0.25474745, y: -0.69672775, z: 0}
       widthMultiplier: 1
       natural: 0
     PercentPrecalcNormals: 0
@@ -1064,9 +1064,9 @@ MonoBehaviour:
   fillColor2: {r: 0.30882353, g: 0.24524221, b: 0.17484862, a: 1}
   UVMapping1: 0
   UVMapping2: 0
-  gradientOffset: {x: -0.6504481, y: 31.252808}
-  gradientAngle: 54.54066
-  gradientScale: 0.11823802
+  gradientOffset: {x: -0.6504352, y: 31.252897}
+  gradientAngle: 54.544857
+  gradientScale: 0.118239135
   textureOffset: {x: 6.41453, y: 24.834902}
   textureAngle: 0
   textureScale: 0.09999823
@@ -1137,29 +1137,29 @@ MonoBehaviour:
     - {x: -0.39652663, y: 0.9180232, z: 0}
     precalcPositions: []
     points:
-    - point: {x: 2.0454576, y: 44.189507, z: 0}
-      inCtrl: {x: -1.667466, y: -0.7231827, z: 0}
-      outCtrl: {x: 3.3550298, y: 1.456131, z: 0}
+    - point: {x: 2.0457108, y: 44.1896, z: 0.0000032782555}
+      inCtrl: {x: -1.6672903, y: -0.7232399, z: 0}
+      outCtrl: {x: 3.3553813, y: 1.4560776, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 8.44422, y: 44.551903, z: 0}
-      inCtrl: {x: -1.5422697, y: 1.6626892, z: 0}
-      outCtrl: {x: 8.707134, y: -9.385605, z: 0}
+    - point: {x: 8.444457, y: 44.55122, z: 0.0000032782555}
+      inCtrl: {x: -1.5424838, y: 1.6624908, z: 0}
+      outCtrl: {x: 8.70687, y: -9.386108, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 1.8336248, y: 18.485441, z: 0}
-      inCtrl: {x: -0.000032663345, y: 8.720772, z: 0}
-      outCtrl: {x: -10.353336, y: 0.7199764, z: 0}
+    - point: {x: 1.8336992, y: 18.485804, z: 0.0000032782555}
+      inCtrl: {x: 0, y: 8.720474, z: 0}
+      outCtrl: {x: -10.35336, y: 0.72003937, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -15.686094, y: 0, z: 0}
-      inCtrl: {x: 10.640972, y: -1.0055921, z: 0}
-      outCtrl: {x: -0.0000009536743, y: 14.886174, z: 0}
+    - point: {x: -15.686449, y: 0, z: 0.0000032782555}
+      inCtrl: {x: 10.640575, y: -1.0048546, z: 0}
+      outCtrl: {x: 0, y: 14.885609, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -2.6496158, y: 44.566013, z: 0}
-      inCtrl: {x: -7.125502, y: 3.7614365, z: 0}
-      outCtrl: {x: 0.8455521, y: -1.4485207, z: 0}
+    - point: {x: -2.6497433, y: 44.56562, z: 0.0000032782555}
+      inCtrl: {x: -7.125186, y: 3.7618065, z: 0}
+      outCtrl: {x: 0.84564567, y: -1.4480782, z: 0}
       widthMultiplier: 1
       natural: 0
     PercentPrecalcNormals: 0
@@ -1407,19 +1407,19 @@ MonoBehaviour:
     - {x: -0.14543316, y: -0.9893681, z: -0}
     precalcPositions: []
     points:
-    - point: {x: -33.672726, y: -11.746331, z: 0}
-      inCtrl: {x: 7.1574554, y: 4.794646, z: 0}
-      outCtrl: {x: -19.970783, y: 24.16183, z: 0}
+    - point: {x: -33.673115, y: -11.746197, z: -0.0000040899263}
+      inCtrl: {x: 7.157072, y: 4.7947035, z: 0}
+      outCtrl: {x: -19.970646, y: 24.161366, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -12.919323, y: -14.307545, z: 0}
-      inCtrl: {x: 0.004327774, y: 10.023624, z: 0}
-      outCtrl: {x: -9.993923, y: 0.023313522, z: 0}
+    - point: {x: -12.919388, y: -14.307918, z: -0.0000040899263}
+      inCtrl: {x: 0.004049301, y: 10.023254, z: 0}
+      outCtrl: {x: -9.993824, y: 0.023481369, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -19.60069, y: -20.341152, z: 0}
-      inCtrl: {x: 10.006821, y: 0.023324966, z: 0}
-      outCtrl: {x: -6.4395027, y: 17.131428, z: 0}
+    - point: {x: -19.600294, y: -20.34155, z: -0.0000040899263}
+      inCtrl: {x: 10.0067835, y: 0.023481369, z: 0}
+      outCtrl: {x: -6.439581, y: 17.131447, z: 0}
       widthMultiplier: 1
       natural: 0
     PercentPrecalcNormals: 0
@@ -1867,9 +1867,9 @@ MonoBehaviour:
   fillColor2: {r: 0.30882353, g: 0.24524221, b: 0.17484862, a: 1}
   UVMapping1: 0
   UVMapping2: 0
-  gradientOffset: {x: -0.6504481, y: 31.252808}
-  gradientAngle: 54.54068
-  gradientScale: 0.11823805
+  gradientOffset: {x: -0.6504352, y: 31.252897}
+  gradientAngle: 54.544857
+  gradientScale: 0.118239135
   textureOffset: {x: 6.41453, y: 24.834902}
   textureAngle: 0
   textureScale: 0.09999823
@@ -1940,29 +1940,29 @@ MonoBehaviour:
     - {x: -0.3965279, y: 0.9180227, z: 0}
     precalcPositions: []
     points:
-    - point: {x: 2.0454576, y: 44.189507, z: 0}
-      inCtrl: {x: -1.667466, y: -0.7231827, z: 0}
-      outCtrl: {x: 3.3550298, y: 1.456131, z: 0}
+    - point: {x: 2.0457108, y: 44.1896, z: -0.0000042915344}
+      inCtrl: {x: -1.6672903, y: -0.7232399, z: 0}
+      outCtrl: {x: 3.3553813, y: 1.4560776, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 8.44422, y: 44.551903, z: 0}
-      inCtrl: {x: -1.5422697, y: 1.6626892, z: 0}
-      outCtrl: {x: 8.707134, y: -9.385605, z: 0}
+    - point: {x: 8.444457, y: 44.55122, z: -0.0000042915344}
+      inCtrl: {x: -1.5424838, y: 1.6624908, z: 0}
+      outCtrl: {x: 8.70687, y: -9.386108, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 11.894382, y: 17.017109, z: 0}
-      inCtrl: {x: -0.000032424927, y: 8.72081, z: 0}
-      outCtrl: {x: -10.353336, y: 0.7199917, z: 0}
+    - point: {x: 11.894243, y: 17.016924, z: -0.0000042915344}
+      inCtrl: {x: 0, y: 8.720474, z: 0}
+      outCtrl: {x: -10.35336, y: 0.72003937, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 1.3356298, y: 18.054995, z: 0}
-      inCtrl: {x: 10.64098, y: -1.0055943, z: 0}
-      outCtrl: {x: 0, y: 14.8862095, z: 0}
+    - point: {x: 1.3352722, y: 18.055382, z: -0.0000042915344}
+      inCtrl: {x: 10.6413765, y: -1.0048561, z: 0}
+      outCtrl: {x: 0, y: 14.885609, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -2.6496158, y: 44.56601, z: 0}
-      inCtrl: {x: -7.125502, y: 3.7614365, z: 0}
-      outCtrl: {x: 0.8455522, y: -1.4485207, z: 0}
+    - point: {x: -2.6497433, y: 44.56562, z: -0.0000042915344}
+      inCtrl: {x: -7.125186, y: 3.7618065, z: 0}
+      outCtrl: {x: 0.84564567, y: -1.4480782, z: 0}
       widthMultiplier: 1
       natural: 0
     PercentPrecalcNormals: 0
