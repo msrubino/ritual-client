@@ -58,7 +58,7 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private bool HasTimedOut()
     {
-        return Time.time - _startTime >= _ritual.TimeUntilStart;
+        return Time.unscaledTime - _startTime >= _ritual.Duration;
     }
 
     private void Timeout()
