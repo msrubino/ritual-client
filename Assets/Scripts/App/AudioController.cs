@@ -44,12 +44,12 @@ public class AudioController : MonoBehaviourBase {
 
     public void OnTouchBegan( TouchInfo ti )
     {
-        Debug.Log("OnTouchBegan");   
+        //Debug.Log("OnTouchBegan");   
     }
     
     public void OnTouchEnded( TouchInfo ti )
     {
-        Debug.Log("OnTouchEnded");   
+        //Debug.Log("OnTouchEnded");   
     }
 }
 
