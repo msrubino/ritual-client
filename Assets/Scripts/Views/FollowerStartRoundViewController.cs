@@ -3,18 +3,25 @@ using System.Collections;
 
 public class FollowerStartRoundViewController : ViewControllerBase
 {
-
     private Ritual _ritual;
 
     public void Start()
     {
-        PollForRoundStarted();
+        StartCoroutine( PollForRitualStarted() );
     }
 
-    private void PollForRoundStarted()
+    private IEnumerator PollForRitualStarted()
     {
-        // poll
-        // HandlePollResponse();
+        while( true )
+        {
+            Debug.Log( "Starting to poll for ritual started." );
+            yield return StartCoroutine( _api.CurrentRitual() );
+            if ( _rituals.HasCurrentActiveRitual() ) yield break;
+            yield return new WaitForSeconds( 1f );
+        }
+
+        Debug.Log( "Current active ritual is ready." );
+        HandlePollResponse();
     }
 
     private void HandlePollResponse()

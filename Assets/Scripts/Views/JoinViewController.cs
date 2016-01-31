@@ -32,8 +32,11 @@ public class JoinViewController : ViewControllerBase
 
         if ( _rituals.WaitingForCurrentRitualToFinish() )
         {
+            Debug.Log( "Waiting for current ritual to finish." );
             AdvanceToPregame();
         } else {
+
+            Debug.Log( "Going on to start round." );
             AdvanceToStartRound();
         }
     }

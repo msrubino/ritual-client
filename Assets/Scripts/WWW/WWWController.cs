@@ -17,7 +17,7 @@ public class WWWController : MonoBehaviour
     public string ritualResultsRoute;
 
     public string currentRitualURL    { get { return baseURL + currentRitualRoute; } }
-    public string declareRitualURL    { get { return baseURL + declareRitualURL; } }
+    public string declareRitualURL    { get { return baseURL + declareRitualRoute; } }
     public string joinURL             { get { return baseURL + joinRoute; } }
     public string performedRitualURL  { get { return baseURL + performedRitualRoute; } }
     public string resetURL            { get { return baseURL + resetRoute; } }

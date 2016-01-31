@@ -5,6 +5,11 @@ public class RitualsController : MonoBehaviour
 {
     public Ritual CurrentRitual { get; set; }
 
+    public bool HasCurrentActiveRitual()
+    {
+        return CurrentRitual != null && CurrentRitual.IsActive;
+    }
+
     public void SetCurrentRitual( RitualObj ritualObj )
     {
         //TODO How to set the current ritual properly, translating to Ritual from ritualObj

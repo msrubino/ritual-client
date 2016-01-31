@@ -240,6 +240,7 @@ MonoBehaviour:
     leaderStartRoundAdvance: 5
     roundEndAdvance: 5
     reignEndAdvance: 5
+  generalPollingDelay: 0
 --- !u!114 &11490472
 MonoBehaviour:
   m_ObjectHideFlags: 1
