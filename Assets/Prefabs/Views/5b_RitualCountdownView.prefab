@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &156154
 GameObject:
   m_ObjectHideFlags: 1
@@ -3090,31 +3090,31 @@ MonoBehaviour:
   _mFilter: {fileID: 3316500}
   spline:
     precalcNormals:
-    - {x: 0.7079616, y: 0.7062509, z: 0}
-    - {x: 0.7061161, y: -0.7080961, z: 0}
-    - {x: -0.7064495, y: -0.70776343, z: -0}
-    - {x: -0.7082933, y: 0.7059182, z: 0}
-    - {x: 0.7079616, y: 0.7062509, z: 0}
+    - {x: 0.7079622, y: 0.7062503, z: 0}
+    - {x: 0.7061157, y: -0.70809644, z: 0}
+    - {x: -0.7064539, y: -0.707759, z: -0}
+    - {x: -0.7082986, y: 0.7059129, z: 0}
+    - {x: 0.7079622, y: 0.7062503, z: 0}
     precalcPositions: []
     points:
-    - point: {x: 20.00455, y: 20.024504, z: 0.00068522757}
-      inCtrl: {x: -9.993018, y: 0.028656006, z: 0.00034261378}
-      outCtrl: {x: 0.0040664673, y: -9.973842, z: 0.00034261378}
+    - point: {x: 20.00455, y: 20.024504, z: 0}
+      inCtrl: {x: -9.993018, y: 0.028656006, z: 0}
+      outCtrl: {x: 0.0040664673, y: -9.973842, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: 20.00455, y: -19.979769, z: 0.00068522757}
-      inCtrl: {x: 0.0040664673, y: 10.024903, z: 0.00034261378}
-      outCtrl: {x: -9.993018, y: 0.02438736, z: 0.00034261378}
+    - point: {x: 20.00455, y: -19.979769, z: 0}
+      inCtrl: {x: 0.0040664673, y: 10.024903, z: 0}
+      outCtrl: {x: -9.993018, y: 0.02438736, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -19.996204, y: -19.979769, z: 0.00068522757}
-      inCtrl: {x: 10.006838, y: 0.02438736, z: 0.00034261378}
-      outCtrl: {x: 0.0056324005, y: 10.024903, z: 0.00034261378}
+    - point: {x: -19.996204, y: -19.979769, z: 0}
+      inCtrl: {x: 10.006838, y: 0.02438736, z: 0}
+      outCtrl: {x: 0.0056324005, y: 10.024903, z: 0}
       widthMultiplier: 1
       natural: 0
-    - point: {x: -19.996204, y: 20.024504, z: 0.00068522757}
-      inCtrl: {x: 0.0056324005, y: -9.973842, z: 0.00034261378}
-      outCtrl: {x: 10.006838, y: 0.028656006, z: 0.00034261378}
+    - point: {x: -19.996204, y: 20.024504, z: 0}
+      inCtrl: {x: 0.0056324005, y: -9.973842, z: 0}
+      outCtrl: {x: 10.006838, y: 0.028656006, z: 0}
       widthMultiplier: 1
       natural: 0
     PercentPrecalcNormals: 0
@@ -7357,7 +7357,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -13112,10 +13112,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22499180}
   m_RootOrder: 2
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.7475791, y: 0.000011444092}
-  m_SizeDelta: {x: 640, y: 191}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.74757385, y: -67}
+  m_SizeDelta: {x: 0, y: -1036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22477560
 RectTransform:
@@ -13129,10 +13129,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 22499180}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.000030517578, y: 161}
-  m_SizeDelta: {x: 640, y: 400}
+  m_SizeDelta: {x: 0, y: -836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &22499180
 RectTransform:
