@@ -14,8 +14,14 @@ public class SplashViewController : ViewControllerBase
         bool hasIdentity = _app.playerController.HasJoinedServerWithName();
 
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
-            if ( hasIdentity ) HandleExistingUser();
-            else AdvanceToJoin();
+            if ( hasIdentity ) 
+            {
+                Debug.Log( "Has identity." );
+                HandleExistingUser();
+            } else {
+                Debug.Log( "Does not have identity." );
+                AdvanceToJoin();
+            }
         });
     }
 

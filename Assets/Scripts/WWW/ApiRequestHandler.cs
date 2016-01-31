@@ -34,14 +34,13 @@ public class ApiRequestHandler : MonoBehaviourBase
     {
         WWW request = CreateJoinRequest(); 
         yield return request;
-        
+
         if ( HasRequestError( request.error ) ) yield break;
 
         string leaderJSON = JsonHelper.GetJsonObject( request.text, "leader" );
         RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( leaderJSON );
 
         RitualObj ritual = JsonUtility.FromJson<RitualObj>( request.text );
-        Debug.Log( ritual );
 
         _player.IsLeader = leader.uuid == _player.Uuid ;
 
@@ -142,7 +141,25 @@ public class ApiRequestHandler : MonoBehaviourBase
             Debug.Log( "REQUEST ERROR!: " + error );
         }
 
-        return error == null;
+        return error != null;
+    }
+
+    [ContextMenu ("Reset Server")]
+    private void ResetServer()
+    {
+        StartCoroutine( Reset() );
+    }
+
+    private IEnumerator Reset()
+    {
+        PlayerPrefs.DeleteAll();
+
+        string url = _www.resetURL;
+        WWW request = new WWW( url );
+        
+        yield return request;
+
+        if ( HasRequestError( request.error ) ) yield break;
     }
 }
 

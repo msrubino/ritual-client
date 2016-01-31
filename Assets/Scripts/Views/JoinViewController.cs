@@ -21,6 +21,7 @@ public class JoinViewController : ViewControllerBase
 
     private void Join()
     {
+        Debug.Log( "Joining." );
         SetUserName();
         StartCoroutine( DoJoin() );
     }

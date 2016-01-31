@@ -24,6 +24,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 462942}
+  - 114: {fileID: 11421326}
   m_Layer: 0
   m_Name: RitualsController
   m_TagString: Untagged
@@ -144,6 +145,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 449400}
   m_RootOrder: 2
+--- !u!114 &11421326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155610754ad7c492dab82262084b3eb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11426124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +174,7 @@ MonoBehaviour:
   declareRitualRoute: declare_ritual
   joinRoute: join
   performedRitualRoute: performed_ritual
+  resetRoute: reset
   ritualResultsRoute: ritual_results
 --- !u!114 &11427152
 MonoBehaviour:
@@ -215,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   apiRequestHandler: {fileID: 11490472}
   playerController: {fileID: 11443866}
-  ritualsController: {fileID: 0}
+  ritualsController: {fileID: 11421326}
   wwwController: {fileID: 11426124}
   viewReferences: {fileID: 11427152}
   ritualTypeMappings: {fileID: 11400000, guid: eefc667ded671433bbc99bf8626014e6, type: 2}
