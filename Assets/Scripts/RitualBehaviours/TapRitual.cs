@@ -26,6 +26,7 @@ public class TapRitual : RitualBehaviorBase
     public void OnMouseDown()
     {
         TapCount++;
+        _audio.PlaySound( AudioEffectType.TapDrum );
     }
 
     private void CheckForCompletion()

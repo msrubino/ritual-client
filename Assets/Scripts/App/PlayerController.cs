@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviourBase
         if (winner == null) 
         {
             winner = new RitualPlayer();
-            winner.name = "Nobody";
+            winner.name = "We need to try harder.";
             winner.uuid = "_";
         }
 
