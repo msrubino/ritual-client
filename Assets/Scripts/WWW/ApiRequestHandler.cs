@@ -6,6 +6,7 @@ public class ApiRequestHandler : MonoBehaviourBase
 {
     private Dictionary<string, object> _fields = new Dictionary<string, object>();
 
+    // Ritual Coroutines --------------------------------------------------
     public IEnumerator DeclareRitual()
     {
         WWW request = CreateDeclareRitualRequest();
@@ -38,8 +39,27 @@ public class ApiRequestHandler : MonoBehaviourBase
         yield return request;
 
         if ( HasRequestError( request.error ) ) yield break;
+        
+        //TODO what to do with the performed ritual info?
     }
 
+    public IEnumerator RitualResults()
+    {
+        WWW request = CreateRitualResultsRequest();
+        yield return request;
+
+        if ( HasRequestError( request.error ) ) yield break;
+        
+        string winnerJSON = JsonHelper.GetJsonObject( request.text, "winner" );
+        RitualPlayer winner = JsonUtility.FromJson<RitualPlayer>( winnerJSON );
+
+        string leaderJSON = JsonHelper.GetJsonObject( request.text, "leader" );
+        RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( leaderJSON );
+
+        //TODO Where to use this information?
+    }
+
+    // Request Functions --------------------------------------------------
     private WWW CreateDeclareRitualRequest()
     {
         string url = _www.declareRitualURL;
@@ -50,7 +70,7 @@ public class ApiRequestHandler : MonoBehaviourBase
         _fields.Add( "duration", _rituals.CurrentRitual.Duration );
         _fields.Add( "starts_in", _rituals.CurrentRitual.TimeUntilStart );
 
-        return CreatePOSTRequest( url, _fields );
+        return CreateRequest( url, _fields );
     }
 
     private WWW CreateJoinRequest()
@@ -61,7 +81,7 @@ public class ApiRequestHandler : MonoBehaviourBase
         _fields.Add( "uuid", _player.Uuid );
         _fields.Add( "name", _player.Username );
 
-        return CreatePOSTRequest( url, _fields );
+        return CreateRequest( url, _fields );
     }
 
     private WWW CreatePerformedRitualRequest()
@@ -71,10 +91,18 @@ public class ApiRequestHandler : MonoBehaviourBase
         _fields.Clear();
         _fields.Add( "uuid", _player.Uuid );
 
-        return CreatePOSTRequest( url, _fields );
+        return CreateRequest( url, _fields );
     }
 
-    private WWW CreatePOSTRequest( string url, Dictionary<string, object> fields )
+    private WWW CreateRitualResultsRequest()
+    {
+        string url = _www.ritualResultsURL;
+        _fields.Clear();
+        return CreateRequest( url, _fields );
+    }
+
+    // Helper Functions --------------------------------------------------
+    private WWW CreateRequest( string url, Dictionary<string, object> fields )
     {
         WWWForm form = new WWWForm();
         foreach( KeyValuePair<string, object> kvp in fields )

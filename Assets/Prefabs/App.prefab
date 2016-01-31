@@ -161,6 +161,7 @@ MonoBehaviour:
   declareRitualRoute: declare_ritual
   joinRoute: join
   performedRitualRoute: performed_ritual
+  ritualResultsRoute: ritual_results
 --- !u!114 &11427152
 MonoBehaviour:
   m_ObjectHideFlags: 1
