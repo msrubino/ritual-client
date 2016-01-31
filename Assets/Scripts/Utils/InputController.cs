@@ -17,7 +17,6 @@ public class InputController : MonoBehaviourBase
     {
         for( int i = 0; i < _currentTouches.Count; i++ )
         {
-            Debug.Log( _currentTouches[i].id );
             if ( _currentTouches[i].id == id ) return _currentTouches[i];
         }
 
