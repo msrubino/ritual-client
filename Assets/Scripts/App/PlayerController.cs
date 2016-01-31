@@ -6,7 +6,10 @@ public class PlayerController : MonoBehaviourBase
 {
     public string playerPrefsNameKey = "JOINED_WITH_NAME";
 
+    //Debug
     public bool shouldSpoofUuid;
+    public bool shouldAlwaysRemakeName;
+
     public Player Player { get; set; } 
     public RitualPlayer LastRitualWinner { get; private set; }
 
@@ -24,7 +27,7 @@ public class PlayerController : MonoBehaviourBase
     {
         string name = PlayerPrefs.GetString( playerPrefsNameKey );
 
-        if ( name != "" )
+        if ( name != "" && !shouldAlwaysRemakeName )
         {
             Player.Username = name;
             return true;

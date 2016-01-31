@@ -1,11 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AudioController : MonoBehaviour {
+public class AudioController : MonoBehaviourBase {
     
     public AudioSource sfxAudioSource;
+    public AudioSource touchAudioSource;
     public AudioClip[] viewSwitchClips;
     
+    void OnEnable()
+    {
+        _inputSettings.OnTouchBegan += OnTouchBegan;
+        _inputSettings.OnTouchEnded += OnTouchEnded;
+    }
+
+    void OnDisable()
+    {
+        _inputSettings.OnTouchBegan -= OnTouchBegan;
+        _inputSettings.OnTouchEnded -= OnTouchEnded;
+    }
+
     public void PlaySound( AudioClip clip )
     {
         //Temp.
@@ -27,6 +40,16 @@ public class AudioController : MonoBehaviour {
         }
 
         sfxAudioSource.PlayOneShot( clipToPlay );
+    }
+
+    public void OnTouchBegan( TouchInfo ti )
+    {
+        Debug.Log("OnTouchBegan");   
+    }
+    
+    public void OnTouchEnded( TouchInfo ti )
+    {
+        Debug.Log("OnTouchEnded");   
     }
 }
 
