@@ -6,7 +6,7 @@ using System.Collections;
 public class LeaderWaitForRitualViewController : ViewControllerBase
 {
     [SerializeField]
-    Text _informFollowers;
+    Text _ritualBegin, _informFollowers;
 
     private float _duration;
     public float Duration
@@ -25,6 +25,10 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
 
     private void DelayedCheckForResult()
     {
+        Delay(Time.time - _rituals.CurrentRitual.TrackedTimeUntilStart, () => {
+            _ritualBegin.text = "The ritual has begun!"; 
+        });
+
         Delay(_duration, () => {
             StartCoroutine(CheckForResult());
         });

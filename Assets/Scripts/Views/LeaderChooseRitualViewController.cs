@@ -46,6 +46,7 @@ public class LeaderChooseRitualViewController : ViewControllerBase
         _rituals.CurrentRitual.RitualType = mapping.ritualType;
         _rituals.CurrentRitual.Duration = mapping.duration;
         _rituals.CurrentRitual.TimeUntilStart = 10;
+        _rituals.CurrentRitual.TrackedTimeUntilStart = Time.time;
 
         yield return StartCoroutine(_api.DeclareRitual());
 

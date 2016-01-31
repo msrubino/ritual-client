@@ -16,6 +16,8 @@ public class Ritual
         set { _timeUntilStart = value; }
     }
 
+    public float TrackedTimeUntilStart { get; set; }
+
     private float _duration;
     public float Duration
     {
