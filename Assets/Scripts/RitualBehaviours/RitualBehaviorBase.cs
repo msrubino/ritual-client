@@ -15,6 +15,7 @@ public abstract class RitualBehaviorBase : MonoBehaviourBase, IRitualBehavior
         if (_didComplete) return;
         _didComplete = true;
         if (DidComplete != null) DidComplete();
-    }
 
+        Debug.Log(string.Format("Completed {0}", this.name));
+    }
 }

@@ -3,5 +3,6 @@ public enum RitualType
 {
     TapFourTimes,
     SwipeRightThreeTimes,
-    ShakePhone
+    ShakePhone,
+    MakeMicrophoneNoise
 }
