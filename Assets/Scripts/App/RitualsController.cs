@@ -1,19 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RitualsController : MonoBehaviour 
+public class RitualsController : MonoBehaviourBase
 {
     public Ritual CurrentRitual { get; set; }
+    public Ritual CurrentPollRitual { get; set; }
 
     public bool HasCurrentActiveRitual()
     {
         return CurrentRitual != null && CurrentRitual.IsActive;
     }
 
-    public void SetCurrentRitual( RitualObj ritualObj )
+    public void SetCurrentRitual( Ritual ritual) 
     {
-        //TODO How to set the current ritual properly, translating to Ritual from ritualObj
-        //CurrentRitual 
+        _rituals.CurrentRitual = ritual;
+    }
+
+    public void SetCurrentPollRitual( Ritual ritual )
+    {
+        _rituals.CurrentPollRitual = ritual;
     }
 
     public bool WaitingForCurrentRitualToFinish()

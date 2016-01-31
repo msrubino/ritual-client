@@ -4,7 +4,7 @@ using System.Collections;
 public class SplashViewController : ViewControllerBase 
 {
 
-    public void Start()
+    public void OnEnable()
     {
         AdvanceToNextView();
     }
@@ -40,14 +40,27 @@ public class SplashViewController : ViewControllerBase
             Debug.Log( "Waiting for current ritual to finish." );
             AdvanceToPregame();
         } else {
-            Debug.Log( "Ready to start round." );
-            AdvanceToFollowerStartRound();
+            if ( _player.IsLeader) 
+            {
+                Debug.Log( "Going on to be the first leader." );
+                AdvanceToFirstLeader();
+            }
+            else 
+            {
+                Debug.Log( "Going on to start round." );
+                AdvanceToFollowerStartRound();
+            }
         }
     }
 
     private void AdvanceToPregame()
     {
         TransitionToView(AppController.Instance.viewReferences.pregameView);
+    }
+
+    private void AdvanceToFirstLeader()
+    {
+        TransitionToView(AppController.Instance.viewReferences.leaderStartRoundView);
     }
 
     private void AdvanceToFollowerStartRound()

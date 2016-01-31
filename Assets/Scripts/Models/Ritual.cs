@@ -24,7 +24,7 @@ public class Ritual
     }
     
     private DateTime _startAt;
-    public DateTime StartAt 
+    public DateTime StartsAt 
     {
         get { return _startAt; }
         set { _startAt = value; }
@@ -34,7 +34,18 @@ public class Ritual
     {
         get
         {
-            return DateTime.Now < StartAt.AddSeconds( Duration );
+            return DateTime.Now < StartsAt.AddSeconds( Duration );
         }
+    }
+
+    public static Ritual FromRitualObj( RitualObj obj ) 
+    {
+        Ritual newRitual = new Ritual();
+        newRitual.Duration = obj.duration;
+        newRitual.RitualType = (RitualType)obj.ritual_type;
+        newRitual.StartsAt = DateTime.Parse( obj.starts_at );
+        newRitual.TimeUntilStart = obj.time_until_start;
+
+        return newRitual;
     }
 }

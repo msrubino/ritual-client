@@ -15,12 +15,19 @@ public class FollowerDoRitualViewController : ViewControllerBase
         set { _ritual = value; }
     }
 
-    public void Start()
+    public void OnEnable()
     {
+        _didCompleteOrTimeout = false;
+
         _startTime = Time.time;
         CreateRitualObject();
         StartCoroutine(CheckForTimeout());
         BeginRitual();
+    }
+
+    public void OnDisable() 
+    {
+        Destroy(_ritualBehavior.gameObject);
     }
 
     private void CreateRitualObject()
@@ -96,7 +103,6 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private void AdvanceToRitualComplete()
     {
-        Destroy(_ritualBehavior.gameObject);
         var ritualComplete = AppController.Instance.viewReferences.followerRitualCompleteView as FollowerRitualCompleteViewController;
         ritualComplete.TimeToCheckForResult = _startTime + _ritual.TimeUntilStart;
         TransitionToView(ritualComplete);

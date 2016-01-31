@@ -6,9 +6,9 @@ public class LeaderStartRoundViewController : ViewControllerBase
     [SerializeField]
     Text _youAreChosenText;
 
-    public void Start()
+    public void OnEnable()
     {
-        _youAreChosenText.text = string.Format("{0}!", _players.playerPrefsNameKey);
+        _youAreChosenText.text = string.Format("{0}!", PlayerPrefs.GetString( _players.playerPrefsNameKey ) );
         DelayedAdvanceToChooseRitual();
     }
 

@@ -4,7 +4,7 @@ using System.Collections;
 public class LeaderFailedViewController : ViewControllerBase
 {
 
-    public void Start()
+    public void OnEnable()
     {
         DelayedAdvanceToNextRound();
     }

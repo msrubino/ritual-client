@@ -31,15 +31,24 @@ public class LeaderChooseRitualViewController : ViewControllerBase
         var tr = button.transform;
         tr.SetParent(buttonParent, false);
         button.onClick.AddListener(() => {
-            ButtonWasClicked(mapping.duration);
+            StartCoroutine(ButtonWasClicked(mapping));
         });
     }
 
-    private void ButtonWasClicked(float duration)
+    private IEnumerator ButtonWasClicked(RitualTypeMappings.Mapping mapping)
     {
-        // send ritual
+        if (_rituals.CurrentRitual == null) {
+            _rituals.CurrentRitual = new Ritual();
+        }
+
+        _rituals.CurrentRitual.RitualType = mapping.ritualType;
+        _rituals.CurrentRitual.Duration = mapping.duration;
+        _rituals.CurrentRitual.TimeUntilStart = 10;
+
+        yield return StartCoroutine(_api.DeclareRitual());
+
         var waitForRitualView = AppController.Instance.viewReferences.leaderWaitForRitualView as LeaderWaitForRitualViewController;
-        waitForRitualView.Duration = duration;
+        waitForRitualView.Duration = mapping.duration;
         TransitionToView(waitForRitualView);
     }
 

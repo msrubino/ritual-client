@@ -3,8 +3,7 @@ using System.Collections;
 
 public class AnnounceRoundWinnerViewController : ViewControllerBase
 {
-
-    public void Start()
+    public void OnEnable()
     {
         DelayedAdvanceToNext();
     }
@@ -28,7 +27,7 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
 
     private bool LeaderChanged() 
     {
-        return _players.LeaderAtEndOfLastRitual.uuid != _players.Leader.uuid;
+        return _players.LeaderAtEndOfLastRitual.uuid != _players.CurrentLeader.uuid;
     }
 
     private void HandleReignOver()
@@ -64,5 +63,4 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
     {
         TransitionToView(AppController.Instance.viewReferences.wonReignView);
     }
-
 }

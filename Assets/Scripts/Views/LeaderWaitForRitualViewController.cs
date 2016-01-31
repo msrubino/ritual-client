@@ -3,14 +3,13 @@ using System.Collections;
 
 public class LeaderWaitForRitualViewController : ViewControllerBase
 {
-
     private float _duration;
     public float Duration
     {
         set { _duration = value; }
     }
 
-    public void Start()
+    public void OnEnable()
     {
         DelayedCheckForResult();
     }

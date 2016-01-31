@@ -23,9 +23,9 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
     #endregion
 
     #region Methods
-    void Awake() {
+    void Awake() 
+    {
         _micControl = GetComponent<MicControl>();
-
         Begin();
     }
 
@@ -35,17 +35,17 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
     }
 
     void Update() {
-        Debug.Log(_micControl.loudness);
-
         if (_isRecording) {
             float loudness = _micControl.loudness;
             _volumes.Add(loudness);
 
-            if (loudness > _minLoudness && loudness < _maxLoudness) {
+            if (loudness > _minLoudness && loudness < _maxLoudness) 
+            {
                 _makeNoiseSum += Time.unscaledDeltaTime;
             }
 
-            if (_makeNoiseSum >= _makeNoiseTimeThreshold) {
+            if (_makeNoiseSum >= _makeNoiseTimeThreshold) 
+            {
                 Complete();
             }
         }

@@ -10,7 +10,7 @@ public class FollowerRitualCompleteViewController : ViewControllerBase
         set { _timeToCheckForResult = value; }
     }
 
-    public void Start()
+    public void OnEnable()
     {
         StartCoroutine(WaitToCheckForResult());
     }

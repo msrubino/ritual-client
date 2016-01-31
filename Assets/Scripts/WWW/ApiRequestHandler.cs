@@ -20,13 +20,17 @@ public class ApiRequestHandler : MonoBehaviourBase
         if ( HasRequestError( request.error ) ) yield break;
 
         Debug.Log( request.text );
-        RitualObj currentRitual = JsonUtility.FromJson<RitualObj>( request.text );
-        Debug.Log( JsonUtility.ToJson( currentRitual ) );
 
-        RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( request.text );
-        Debug.Log( leader );
+        CurrentRitualResponse resp = JsonUtility.FromJson<CurrentRitualResponse>( request.text );
+        if ( resp == null || resp.ritual == null || resp.ritual.duration == 0 || resp.leader == null )
+        {
+            yield break;
+        }
 
-        //TODO what do with with current ritual information next?
+        RitualObj currentRitual = resp.ritual;
+        RitualPlayer leader = resp.leader;
+
+        _rituals.SetCurrentPollRitual( Ritual.FromRitualObj( currentRitual ) );
     }
 
     public IEnumerator DeclareRitual()
@@ -44,22 +48,27 @@ public class ApiRequestHandler : MonoBehaviourBase
 
         if ( HasRequestError( request.error ) ) yield break;
 
-        string leaderJSON = JsonHelper.GetJsonObject( request.text, "leader" );
-        RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( leaderJSON );
-        _players.SetCurrentLeader( leader );
-
-        string ritualJSON = JsonHelper.GetJsonObject( request.text, "ritual" );
-        if ( ritualJSON != null )
+        CurrentRitualResponse resp = JsonUtility.FromJson<CurrentRitualResponse>( request.text );
+        if ( resp == null )
         {
-            _rituals.SetCurrentRitual( null );
-        } else {
-            RitualObj ritual = JsonUtility.FromJson<RitualObj>( request.text );
-            _rituals.SetCurrentRitual( ritual );
+            yield break;
         }
 
-        //TODO Nec'y?
-        _player.IsLeader = leader.uuid == _player.Uuid ;
+        RitualPlayer leader = resp.leader;
+        _players.SetCurrentLeader( leader );
 
+        RitualObj ritual = resp.ritual;
+        if ( ritual.duration != 0 )
+        {
+            _rituals.SetCurrentPollRitual( Ritual.FromRitualObj( ritual ) );
+        }
+        else 
+        {
+            _rituals.SetCurrentRitual( null );
+            _rituals.SetCurrentPollRitual( null );
+        }
+
+        _player.IsLeader = leader.uuid == _player.Uuid;
         PlayerPrefs.SetString( _app.playerController.playerPrefsNameKey, _player.Username );
     }
 
@@ -134,7 +143,7 @@ public class ApiRequestHandler : MonoBehaviourBase
     {
         string url = _www.ritualResultsURL;
         _fields.Clear();
-        return CreateRequest( url, _fields );
+        return CreateRequest( url );
     }
 
     // Helper Functions --------------------------------------------------
@@ -190,7 +199,7 @@ public class ApiRequestHandler : MonoBehaviourBase
         string url = _www.declareRitualURL;
 
         _fields.Clear();
-        _fields.Add( "uuid", _players.Leader.uuid );
+        _fields.Add( "uuid", _players.CurrentLeader.uuid );
         _fields.Add( "ritual_type", 0 );
         _fields.Add( "duration", 10f );
         _fields.Add( "starts_in", 5f );

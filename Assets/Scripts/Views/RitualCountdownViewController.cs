@@ -7,13 +7,7 @@ public class RitualCountdownViewController : ViewControllerBase
 
     public Text countdownText;
 
-    private Ritual _ritual;
-    public Ritual Ritual
-    {
-        set { _ritual = value; }
-    }
-
-    public void Start()
+    public void OnEnable()
     {
         StartCoroutine(DoCountdown());
     }
@@ -32,8 +26,7 @@ public class RitualCountdownViewController : ViewControllerBase
     private void AdvanceToDoRitual()
     {
         var doRitualView = AppController.Instance.viewReferences.followerDoRitualView as FollowerDoRitualViewController;
-        doRitualView.Ritual = _ritual;
+        doRitualView.Ritual = _rituals.CurrentRitual;
         TransitionToView(doRitualView);
     }
-
 }

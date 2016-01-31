@@ -4,7 +4,7 @@ using System.Collections;
 public class PregameViewController : ViewControllerBase
 {
 
-    public void Start()
+    public void OnEnable()
     {
         PollForRoundReady();
     }

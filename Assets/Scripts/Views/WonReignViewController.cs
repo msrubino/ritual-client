@@ -4,7 +4,7 @@ using System.Collections;
 public class WonReignViewController : ViewControllerBase
 {
 
-    public void Start()
+    public void OnEnable()
     {
         DelayedAdvanceToNextReign();
     }

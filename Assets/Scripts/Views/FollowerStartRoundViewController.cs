@@ -3,9 +3,7 @@ using System.Collections;
 
 public class FollowerStartRoundViewController : ViewControllerBase
 {
-    private Ritual _ritual;
-
-    public void Start()
+    public void OnEnable()
     {
         StartCoroutine( PollForRitualStarted() );
     }
@@ -16,42 +14,64 @@ public class FollowerStartRoundViewController : ViewControllerBase
         {
             Debug.Log( "Starting to poll for ritual started." );
             yield return StartCoroutine( _api.CurrentRitual() );
-            if ( _rituals.HasCurrentActiveRitual() ) yield break;
+
+            if ( LeaderFailed() ) 
+            {
+                AdvanceToLeaderFailed();
+                yield break;
+            }
+
+            HandlePollResponse();
+
+            if ( _rituals.HasCurrentActiveRitual() ) 
+            {
+                Delay(_rituals.CurrentRitual.TimeUntilStart - 3 /* it's late */, () => {
+                    AdvanceToCountdown();
+                }); 
+                yield break;
+            }
             yield return new WaitForSeconds( 1f );
         }
 
         Debug.Log( "Current active ritual is ready." );
-        HandlePollResponse();
+    }
+
+    private bool LeaderFailed() {
+        bool leadersExist = _players.CurrentLeader != null && _players.CurrentPollLeader != null;
+        if ( leadersExist && _players.CurrentLeader.uuid != _players.CurrentPollLeader.uuid )
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void HandlePollResponse()
     {
-        // if new leader
-        // AdvanceToLeaderFailed();
-        // if round started
-        HandleRoundStarted();
-        // else
-        // Delay(AppController.Instance.appTimes.startRoundPoll, () => {
-            // PollForRoundStarted();
-        // }); 
+        if ( _rituals.CurrentPollRitual != null ) 
+        {
+            _rituals.CurrentRitual = _rituals.CurrentPollRitual;
+            _rituals.CurrentPollRitual = null;
+        }
     }
 
     private void AdvanceToLeaderFailed()
     {
-        TransitionToView(AppController.Instance.viewReferences.wonReignView);
-    }
+        if ( _player.Uuid == _players.CurrentPollLeader.uuid )
+        {
+            TransitionToView(AppController.Instance.viewReferences.wonReignView);
+        }
+        else
+        {
+            TransitionToView(AppController.Instance.viewReferences.announceReignWinnerView);
+        }
 
-    private void HandleRoundStarted()
-    {
-        // parse ritual info from response
-        AdvanceToCountdown();
+        _players.CurrentLeader = _players.CurrentPollLeader;
     }
 
     private void AdvanceToCountdown()
     {
         var countdownView = AppController.Instance.viewReferences.ritualCountdownView as RitualCountdownViewController;
-        countdownView.Ritual = _ritual;
         TransitionToView(countdownView);
     }
-
 }

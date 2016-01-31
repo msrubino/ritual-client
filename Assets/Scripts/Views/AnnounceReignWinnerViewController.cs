@@ -4,7 +4,7 @@ using System.Collections;
 public class AnnounceReignWinnerViewController : ViewControllerBase
 {
 
-    public void Start()
+    public void OnEnable()
     {
         DelayedAdvanceToNextReign();
     }
