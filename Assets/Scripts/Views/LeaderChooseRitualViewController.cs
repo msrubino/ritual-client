@@ -5,8 +5,6 @@ using System.Collections;
 public class LeaderChooseRitualViewController : ViewControllerBase 
 {
 
-    public float startY;
-    public float ySpacing;
     public Transform buttonParent;
 
     public void Start()
@@ -21,20 +19,20 @@ public class LeaderChooseRitualViewController : ViewControllerBase
 
     private void Layout()
     {
-        float y = startY;
+        Debug.Log(AppController.Instance);
+        Debug.Log(AppController.Instance.ritualTypeMappings);
+        Debug.Log(AppController.Instance.ritualTypeMappings.mappings);
         foreach(var mapping in AppController.Instance.ritualTypeMappings.mappings)
         {
-            AddButton(mapping, y);
-            y += ySpacing;
+            AddButton(mapping);
         }
     }
 
-    private void AddButton(RitualTypeMappings.Mapping mapping, float y)
+    private void AddButton(RitualTypeMappings.Mapping mapping)
     {
         var button = Instantiate(mapping.ritualChooseButton, Vector3.zero, Quaternion.identity) as Button;
         var tr = button.transform;
-        tr.parent = buttonParent;
-        tr.localPosition = new Vector3(0f, y, 0f);
+        tr.SetParent(buttonParent, false);
         button.onClick.AddListener(() => {
             ButtonWasClicked(mapping.duration);
         });
