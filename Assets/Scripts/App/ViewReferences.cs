@@ -9,7 +9,6 @@ public class ViewReferences : MonoBehaviour
     public ViewControllerBase followerStartRoundView;
     public ViewControllerBase ritualCountdownView;
     public ViewControllerBase leaderStartRoundView;
-    public ViewControllerBase leaderStartReignView;
     public ViewControllerBase followerDoRitualView;
     public ViewControllerBase followerRitualCompleteView;
     public ViewControllerBase leaderChooseRitualView;
