@@ -16,13 +16,34 @@ public class RitualTypeMappings : ScriptableObject
 
     public Mapping[] mappings;
 
-    public RitualBehaviorBase GetRitualForType(RitualType ritualType)
+    public float GetDurationForType(RitualType ritualType)
+    {
+        var mapping = GetMappingForType(ritualType);
+        if (mapping == null) return 0f;
+        return mapping.duration;
+    }
+
+    public RitualBehaviorBase GetRitualBehaviorForType(RitualType ritualType)
+    {
+        var mapping = GetMappingForType(ritualType);
+        if (mapping == null) return null;
+        return mapping.ritualBehavior;
+    }
+
+    public Button GetButtonForType(RitualType ritualType)
+    {
+        var mapping = GetMappingForType(ritualType);
+        if (mapping == null) return null;
+        return mapping.ritualChooseButton;
+    }
+
+    public Mapping GetMappingForType(RitualType ritualType)
     {
         foreach (var mapping in mappings)
         {
             if (ritualType == mapping.ritualType)
             {
-                return mapping.ritualBehavior;
+                return mapping;
             }
         }
         return null;
