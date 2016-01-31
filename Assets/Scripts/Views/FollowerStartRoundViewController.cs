@@ -16,6 +16,7 @@ public class FollowerStartRoundViewController : ViewControllerBase
         {
             yield return StartCoroutine( _api.CurrentRitual() );
 
+            if ( _players.CurrentLeader != null ) newLeaderNameText.text = _players.CurrentLeader.name;
             if ( LeaderFailed() ) 
             {
                 AdvanceToLeaderFailed();
@@ -39,6 +40,7 @@ public class FollowerStartRoundViewController : ViewControllerBase
         bool leadersExist = _players.CurrentLeader != null && _players.CurrentPollLeader != null;
         if ( leadersExist && _players.CurrentLeader.uuid != _players.CurrentPollLeader.uuid )
         {
+            newLeaderNameText.text = _players.CurrentPollLeader.name;
             return true;
         }
 
