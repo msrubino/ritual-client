@@ -54,6 +54,7 @@ public class LeaderChooseRitualViewController : ViewControllerBase
         var waitForRitualView = AppController.Instance.viewReferences.leaderWaitForRitualView as LeaderWaitForRitualViewController;
         waitForRitualView.Duration = mapping.duration + _rituals.CurrentRitual.TimeUntilStart;
         waitForRitualView.CurrentTheme = mapping.elementTheme;
+        waitForRitualView.LeaderInstructions = mapping.leaderInstructions;
         TransitionToView(waitForRitualView);
     }
 
