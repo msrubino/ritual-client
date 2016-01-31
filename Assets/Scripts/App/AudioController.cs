@@ -79,6 +79,7 @@ public class AudioController : MonoBehaviourBase {
     void LoadDrums()
     {
         _drumClips = Resources.LoadAll("drums") as AudioClip[]; 
+        Debug.Log( _drumClips );
     }
 }
 
