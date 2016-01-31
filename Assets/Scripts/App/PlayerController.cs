@@ -4,6 +4,8 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour 
 {
+    public string playerPrefsNameKey = "JOINED_WITH_NAME";
+
     public bool shouldSpoofUuid;
     public Player Player { get; set; } 
 
@@ -11,5 +13,10 @@ public class PlayerController : MonoBehaviour
     {
         Player = new Player(); 
         Player.Uuid = Guid.NewGuid().ToString();
+    }
+
+    public bool HasJoinedServerWithName()
+    {
+        return PlayerPrefs.GetString( playerPrefsNameKey ) != "";
     }
 }

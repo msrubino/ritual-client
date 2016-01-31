@@ -27,41 +27,15 @@ public class FollowerRitualCompleteViewController : ViewControllerBase
     private void CheckForResult()
     {
         // check for result
-        // HandleResultResponse();
+        // AdvanceToRoundWinner()
     }
 
-    private void HandleResultResponse()
-    {
-        // if reign over
-        // HandleReignOver();
-        // else
-        // HandleRoundOver()
-    }
-
-    private void HandleReignOver()
-    {
-        // if won reign
-        // AdvanceToWonReign();
-        // else
-        // AdvanceToAnnounceReignWinner();
-    }
-
-    private void HandleRoundOver()
+    private void AdvanceToRoundWinner()
     {
         // if won round
         // AdvanceToWonRound();
         // else 
         // AdvanceToAnnounceRoundWinner();
-    }
-
-    private void AdvanceToWonReign()
-    {
-        TransitionToView(AppController.Instance.viewReferences.wonReignView);
-    }
-
-    private void AdvanceToAnnounceReignWinner()
-    {
-        TransitionToView(AppController.Instance.viewReferences.announceReignWinnerView);
     }
 
     private void AdvanceToWonRound()

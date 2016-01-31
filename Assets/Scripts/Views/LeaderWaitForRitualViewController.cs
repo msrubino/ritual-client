@@ -4,10 +4,10 @@ using System.Collections;
 public class LeaderWaitForRitualViewController : ViewControllerBase
 {
 
-    private Ritual _ritual;
-    public Ritual Ritual
+    private float _duration;
+    public float Duration
     {
-        set { _ritual = value; }
+        set { _duration = value; }
     }
 
     public void Start()
@@ -17,7 +17,7 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
 
     private void DelayedCheckForResult()
     {
-        Delay(_ritual.Duration, () => {
+        Delay(_duration, () => {
             CheckForResult();
         });
     }

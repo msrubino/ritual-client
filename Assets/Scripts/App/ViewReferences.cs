@@ -7,6 +7,7 @@ public class ViewReferences : MonoBehaviour
     public ViewControllerBase joinView;
     public ViewControllerBase pregameView;
     public ViewControllerBase followerStartRoundView;
+    public ViewControllerBase ritualCountdownView;
     public ViewControllerBase leaderStartRoundView;
     public ViewControllerBase leaderStartReignView;
     public ViewControllerBase followerDoRitualView;
@@ -17,5 +18,6 @@ public class ViewReferences : MonoBehaviour
     public ViewControllerBase announceReignWinnerView;
     public ViewControllerBase wonRoundView;
     public ViewControllerBase announceRoundWinnerView;
+    public ViewControllerBase leaderFailedView;
 
 }

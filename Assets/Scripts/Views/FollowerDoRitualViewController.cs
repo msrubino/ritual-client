@@ -9,10 +9,10 @@ public class FollowerDoRitualViewController : ViewControllerBase
     private float _startTime;
     private bool _isSubscribedToRitualDidComplete;
 
-    private RitualRun _ritualRun;
-    public RitualRun RitualRun
+    private Ritual _ritual;
+    public Ritual Ritual
     {
-        set { _ritualRun = value; }
+        set { _ritual = value; }
     }
 
     public void Start()
@@ -25,7 +25,7 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private void CreateRitualObject()
     {
-        var ritualBehavior = AppController.Instance.ritualTypeMappings.GetRitualForType(_ritualRun.RitualType);
+        var ritualBehavior = AppController.Instance.ritualTypeMappings.GetRitualForType(_ritual.RitualType);
         _ritualBehavior = Instantiate(ritualBehavior, Vector3.zero, Quaternion.identity) as RitualBehaviorBase;
     }
     
@@ -51,14 +51,17 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     private bool HasTimedOut()
     {
-        return Time.time - _startTime >= _ritualRun.TimeUntilStart;
+        return Time.time - _startTime >= _ritual.TimeUntilStart;
     }
 
     private void Timeout()
     {
         _didCompleteOrTimeout = true;
         UnsubscribeToRitualDidComplete();
-        AdvanceToRitualComplete();
+        // if won round
+        AdvanceToWonRound();
+        // else
+        // AdvanceToAnnounceRoundWinner();
     }
 
     private void RitualDidComplete()
@@ -88,8 +91,18 @@ public class FollowerDoRitualViewController : ViewControllerBase
     {
         Destroy(_ritualBehavior.gameObject);
         var ritualComplete = AppController.Instance.viewReferences.followerRitualCompleteView as FollowerRitualCompleteViewController;
-        ritualComplete.TimeToCheckForResult = _startTime + _ritualRun.TimeUntilStart;
+        ritualComplete.TimeToCheckForResult = _startTime + _ritual.TimeUntilStart;
         TransitionToView(ritualComplete);
+    }
+
+    private void AdvanceToWonRound()
+    {
+        TransitionToView(AppController.Instance.viewReferences.wonRoundView);
+    }
+
+    private void AdvanceToAnnounceRoundWinner()
+    {
+        TransitionToView(AppController.Instance.viewReferences.announceRoundWinnerView);
     }
 
 }

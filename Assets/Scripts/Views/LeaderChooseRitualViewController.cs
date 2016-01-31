@@ -35,14 +35,16 @@ public class LeaderChooseRitualViewController : ViewControllerBase
         var tr = button.transform;
         tr.parent = buttonParent;
         tr.localPosition = new Vector3(0f, y, 0f);
-        // assign action to button: Button
+        button.onClick.AddListener(() => {
+            ButtonWasClicked(mapping.duration);
+        });
     }
 
-    private void ButtonWasClicked(Ritual ritual)
+    private void ButtonWasClicked(float duration)
     {
         // send ritual
         var waitForRitualView = AppController.Instance.viewReferences.leaderWaitForRitualView as LeaderWaitForRitualViewController;
-        waitForRitualView.Ritual = ritual;
+        waitForRitualView.Duration = duration;
         TransitionToView(waitForRitualView);
     }
 

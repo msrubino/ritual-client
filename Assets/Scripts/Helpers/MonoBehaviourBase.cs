@@ -40,8 +40,9 @@ public class MonoBehaviourBase : MonoBehaviour
     }
 
     // Quick References to Key Components
-    protected ApiRequestHandler _api    { get { return _app.apiRequestHandler; } }
-    protected AppController     _app    { get { return AppController.Instance; } }
-    protected Player            _player { get { return _app.playerController.Player; } }
-    protected WWWController     _www    { get { return _app.wwwController; } }
+    protected ApiRequestHandler _api      { get { return _app.apiRequestHandler; } }
+    protected AppController     _app      { get { return AppController.Instance; } }
+    protected Player            _player   { get { return _app.playerController.Player; } }
+    protected RitualsController _rituals  { get { return _app.ritualsController; } }
+    protected WWWController     _www      { get { return _app.wwwController; } }
 }

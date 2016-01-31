@@ -28,6 +28,9 @@ public class JoinViewController : ViewControllerBase
     private IEnumerator DoJoin()
     {
         yield return StartCoroutine( _api.Join() );
+        // if round ready
+        // AdvanceToStartRound();
+        // else
         AdvanceToPregame();
     }
 
@@ -36,6 +39,11 @@ public class JoinViewController : ViewControllerBase
         TransitionToView(AppController.Instance.viewReferences.pregameView);
     }
 
+    private void AdvanceToStartRound()
+    {
+        TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
+    }
+    
     private void SetUserName()
     {
         _player.Username = usernameField.text; 

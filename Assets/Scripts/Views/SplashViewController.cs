@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class SplashViewController : ViewControllerBase 
@@ -11,12 +11,21 @@ public class SplashViewController : ViewControllerBase
 
     private void AdvanceToNextView()
     {
+        bool hasIdentity = _app.playerController.HasJoinedServerWithName();
+
         Delay(AppController.Instance.appTimes.minSplashAdvance, () => {
-            // if has identity
-            // AdvanceToPregame();
-            // else
-            AdvanceToJoin();
+            if ( hasIdentity ) HandleExistingUser();
+            else AdvanceToJoin();
         });
+    }
+
+    private void HandleExistingUser()
+    {
+        // send uuid to server
+        // if round ready
+        AdvanceToStartRound();
+        // else
+        // AdvanceToPregame();
     }
 
     private void AdvanceToPregame()
@@ -24,6 +33,11 @@ public class SplashViewController : ViewControllerBase
         TransitionToView(AppController.Instance.viewReferences.pregameView);
     }
 
+    private void AdvanceToStartRound()
+    {
+        TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
+    }
+    
     private void AdvanceToJoin()
     {
         TransitionToView(AppController.Instance.viewReferences.joinView);

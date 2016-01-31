@@ -4,7 +4,7 @@ using System.Collections;
 public class FollowerStartRoundViewController : ViewControllerBase
 {
 
-    private RitualRun _ritualRun;
+    private Ritual _ritual;
 
     public void Start()
     {
@@ -19,6 +19,8 @@ public class FollowerStartRoundViewController : ViewControllerBase
 
     private void HandlePollResponse()
     {
+        // if new leader
+        // AdvanceToLeaderFailed();
         // if round started
         HandleRoundStarted();
         // else
@@ -27,17 +29,22 @@ public class FollowerStartRoundViewController : ViewControllerBase
         // }); 
     }
 
+    private void AdvanceToLeaderFailed()
+    {
+        TransitionToView(AppController.Instance.viewReferences.leaderFailedView);
+    }
+
     private void HandleRoundStarted()
     {
         // parse ritual info from response
-        AdvanceToDoRitual();
+        AdvanceToCountdown();
     }
 
-    private void AdvanceToDoRitual()
+    private void AdvanceToCountdown()
     {
-        var doRitualView = AppController.Instance.viewReferences.followerDoRitualView as FollowerDoRitualViewController;
-        doRitualView.RitualRun = _ritualRun;
-        TransitionToView(doRitualView);
+        var countdownView = AppController.Instance.viewReferences.ritualCountdownView as RitualCountdownViewController;
+        countdownView.Ritual = _ritual;
+        TransitionToView(countdownView);
     }
 
 }
