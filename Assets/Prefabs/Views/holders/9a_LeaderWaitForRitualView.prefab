@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7161760aefa493685af69d758ad0fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ritualBegin: {fileID: 11448016}
   _informFollowers: {fileID: 11497640}
 --- !u!114 &11497640
 MonoBehaviour:
