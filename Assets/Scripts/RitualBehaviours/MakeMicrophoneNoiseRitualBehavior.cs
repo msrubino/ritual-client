@@ -17,7 +17,7 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
     float _maxLoudness = 0.8f;
 
     [SerializeField]
-    float _makeNoiseTimeThreshold = 10f;
+    float _makeNoiseTimeThreshold = 2f;
 
     float _makeNoiseSum = 0f;
 
@@ -43,6 +43,8 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
 
     void Update() {
         if (_isRecording) {
+            Debug.Log(_micControl.loudness.ToString() + " " + _micControl.sensitivity);
+            if (_micControl.sensitivity < 7f) _micControl.sensitivity = 7f;
             float loudness = _micControl.loudness;
             _volumes.Add(loudness);
 
