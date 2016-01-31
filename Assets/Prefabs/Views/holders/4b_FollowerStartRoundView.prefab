@@ -411,18 +411,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 091ca3f11417544449133adc47a2209c, type: 3}
-    m_FontSize: 40
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.6
-  m_Text: Prepare Yourself....
+  m_Text: Form a circle
 --- !u!114 &11423960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -634,7 +634,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Leader Name
+  m_Text: 
 --- !u!198 &19810932
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -3773,7 +3773,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 59.44}
+  m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: -163, y: 224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &100100000
