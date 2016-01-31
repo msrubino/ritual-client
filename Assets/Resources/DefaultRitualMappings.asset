@@ -27,11 +27,11 @@ MonoBehaviour:
     leaderInstructions: 
   - ritualType: 2
     duration: 10
-    ritualBehavior: {fileID: 0}
+    ritualBehavior: {fileID: 11436036, guid: f21b314d24cfe408a9ad598989385dfa, type: 2}
     ritualChooseButton: {fileID: 11491256, guid: c042cd28ba4694914a99a5f780653cea,
       type: 2}
     elementTheme: 3
-    leaderInstructions: 
+    leaderInstructions: Guide everyone in shaking their phones wildly for ten seconds.
   - ritualType: 3
     duration: 20
     ritualBehavior: {fileID: 11408716, guid: ed97e9ff5dc7f439cbe24a311863248b, type: 2}

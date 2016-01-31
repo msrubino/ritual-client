@@ -71,9 +71,10 @@ public class AudioController : MonoBehaviourBase {
         //Debug.Log("OnTouchEnded");   
     }
 
-    public void SwitchDrum()
+    public AudioClip SwitchDrum()
     {
         _myDrum = _drumClips[ Random.Range( 0, _drumClips.Length ) ];
+        return _myDrum;
     }
 
     void LoadDrums()
