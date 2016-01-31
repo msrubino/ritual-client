@@ -10,7 +10,7 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
 
     private void DelayedAdvanceToNext()
     {
-        Delay(AppController.Instance.appTimes.roundEndAdvance, () => {
+        Delay(_app.appTimes.roundEndAdvance, () => {
             bool leaderChanged = LeaderChanged();
             _players.UpdateLeaderAtEndOfRound();
 
@@ -44,23 +44,23 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
 
     private void AdvanceToNextRound()
     {
-        if (_player.IsLeader)
+        if ( _player.IsLeader )
         {
-            TransitionToView(AppController.Instance.viewReferences.leaderStartRoundView);
+            TransitionToView( _app.viewReferences.leaderStartRoundView );
         }
         else 
         {
-            TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
+            TransitionToView( _app.viewReferences.followerStartRoundView );
         }
     }
 
     private void AdvanceToAnnounceReignWinner()
     {
-        TransitionToView(AppController.Instance.viewReferences.announceReignWinnerView);
+        TransitionToView( _app.viewReferences.announceReignWinnerView );
     }
 
     private void AdvanceToWonReign()
     {
-        TransitionToView(AppController.Instance.viewReferences.wonReignView);
+        TransitionToView( _app.viewReferences.wonReignView );
     }
 }

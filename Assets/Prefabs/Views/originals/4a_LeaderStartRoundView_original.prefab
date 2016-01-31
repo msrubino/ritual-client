@@ -116,7 +116,7 @@ GameObject:
   - 114: {fileID: 11406816}
   - 114: {fileID: 11414664}
   m_Layer: 5
-  m_Name: 4a_LeaderStartRoundView
+  m_Name: 4a_LeaderStartRoundView_original
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
