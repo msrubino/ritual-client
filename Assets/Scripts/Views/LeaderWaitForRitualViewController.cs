@@ -25,7 +25,7 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
 
     private void DelayedCheckForResult()
     {
-        Delay(Time.time - _rituals.CurrentRitual.TrackedTimeUntilStart, () => {
+        Delay((_rituals.CurrentRitual.TrackedTimeUntilStart + _rituals.CurrentRitual.TimeUntilStart) - Time.time, () => {
             _ritualBegin.text = "The ritual has begun!"; 
         });
 
