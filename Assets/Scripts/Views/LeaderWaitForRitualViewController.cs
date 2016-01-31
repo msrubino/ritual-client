@@ -19,7 +19,7 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
 
     public void OnEnable()
     {
-        _informFollowers.text = string.Format("Guide Your followers:\n{0}", LeaderInstructions);
+        _informFollowers.text = LeaderInstructions;
         DelayedCheckForResult();
     }
 
