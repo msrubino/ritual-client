@@ -1159,11 +1159,11 @@ MonoBehaviour:
   _mFilter: {fileID: 3375798}
   spline:
     precalcNormals:
-    - {x: 0.7079616, y: 0.7062509, z: 0}
+    - {x: 0.70796174, y: 0.7062508, z: 0}
     - {x: 0.7061161, y: -0.7080961, z: 0}
     - {x: -0.7064495, y: -0.70776343, z: -0}
-    - {x: -0.7082933, y: 0.7059182, z: 0}
-    - {x: 0.7079616, y: 0.7062509, z: 0}
+    - {x: -0.70829344, y: 0.70591813, z: 0}
+    - {x: 0.70796174, y: 0.7062508, z: 0}
     precalcPositions: []
     points:
     - point: {x: 20.004562, y: 20.024536, z: 0}
@@ -1225,7 +1225,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0

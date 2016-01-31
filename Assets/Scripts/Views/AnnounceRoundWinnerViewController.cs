@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class AnnounceRoundWinnerViewController : ViewControllerBase
 {
+    public Text winnerNameText;
+
     public void OnEnable()
     {
         DelayedAdvanceToNext();
@@ -10,6 +13,8 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
 
     private void DelayedAdvanceToNext()
     {
+        winnerNameText.text = _players.LastRitualWinner.name;
+
         Delay(_app.appTimes.roundEndAdvance, () => {
             bool leaderChanged = LeaderChanged();
             _players.UpdateLeaderAtEndOfRound();
