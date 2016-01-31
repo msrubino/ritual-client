@@ -161,6 +161,7 @@ public class ApiRequestHandler : MonoBehaviourBase
 
     private WWW CreateRequest( string url, Dictionary<string, object> fields )
     {
+        _infoHud.Log( "Pinging API - " + url );
         WWWForm form = new WWWForm();
         foreach( KeyValuePair<string, object> kvp in fields )
         {

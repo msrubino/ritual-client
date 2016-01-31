@@ -17,6 +17,8 @@ public class AppController : MonoBehaviour
     public ThemeController      themeController;
     public WWWController        wwwController;
 
+    public InfoHud              infoHud;
+
     public ViewReferences     viewReferences;
     public RitualTypeMappings ritualTypeMappings;
     public AppTimes           appTimes;
