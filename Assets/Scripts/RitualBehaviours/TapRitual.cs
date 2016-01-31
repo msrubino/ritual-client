@@ -6,7 +6,7 @@ public class TapRitual : RitualBehaviorBase
 
     public int numberOfTaps;
     
-    public int _tapCount;
+    private int _tapCount;
     public int TapCount
     {
         get { return _tapCount; }
