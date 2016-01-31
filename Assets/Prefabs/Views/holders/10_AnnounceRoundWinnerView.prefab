@@ -32,7 +32,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &104330
 GameObject:
   m_ObjectHideFlags: 1
@@ -764,7 +764,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Will your name be next?
+  m_Text: Will You be Chosen next?
 --- !u!114 &11407800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1240,6 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17344d4d49464b0c9784dce92e95bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winnerNameText: {fileID: 11436850}
 --- !u!114 &11456060
 MonoBehaviour:
   m_ObjectHideFlags: 1

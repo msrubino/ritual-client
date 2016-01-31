@@ -13,7 +13,14 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
 
     private void DelayedAdvanceToNext()
     {
-        winnerNameText.text = _players.LastRitualWinner.name;
+        if ( _players.LastRitualWinner.name == "We need to try harder." ) 
+        {
+            winnerNameText.text = _players.LastRitualWinner.name;
+        }
+        else
+        {
+            winnerNameText.text = string.Format("{0} is the most devout.", _players.LastRitualWinner.name);
+        }
 
         Delay(_app.appTimes.roundEndAdvance, () => {
             bool leaderChanged = LeaderChanged();
