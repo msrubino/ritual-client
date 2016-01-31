@@ -22,15 +22,22 @@ public class ApiRequestHandler : MonoBehaviourBase
         Debug.Log( request.text );
 
         CurrentRitualResponse resp = JsonUtility.FromJson<CurrentRitualResponse>( request.text );
-        if ( resp == null || resp.ritual == null || resp.ritual.duration == 0 || resp.leader == null )
+        if ( resp == null)
         {
             yield break;
         }
 
-        RitualObj currentRitual = resp.ritual;
-        RitualPlayer leader = resp.leader;
+        if ( resp.leader != null ) 
+        {
+            RitualPlayer leader = resp.leader;
+            _players.SetCurrentPollLeader( leader );
+        }
 
-        _rituals.SetCurrentPollRitual( Ritual.FromRitualObj( currentRitual ) );
+        if ( resp.ritual != null && resp.ritual.duration != 0 ) 
+        {
+            RitualObj currentRitual = resp.ritual;
+            _rituals.SetCurrentPollRitual( Ritual.FromRitualObj( currentRitual ) );
+        }
     }
 
     public IEnumerator DeclareRitual()
@@ -68,7 +75,6 @@ public class ApiRequestHandler : MonoBehaviourBase
             _rituals.SetCurrentPollRitual( null );
         }
 
-        _player.IsLeader = leader.uuid == _player.Uuid;
         PlayerPrefs.SetString( _app.playerController.playerPrefsNameKey, _player.Username );
     }
 

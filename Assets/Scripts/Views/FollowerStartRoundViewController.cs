@@ -12,7 +12,6 @@ public class FollowerStartRoundViewController : ViewControllerBase
     {
         while( true )
         {
-            Debug.Log( "Starting to poll for ritual started." );
             yield return StartCoroutine( _api.CurrentRitual() );
 
             if ( LeaderFailed() ) 
@@ -32,8 +31,6 @@ public class FollowerStartRoundViewController : ViewControllerBase
             }
             yield return new WaitForSeconds( 1f );
         }
-
-        Debug.Log( "Current active ritual is ready." );
     }
 
     private bool LeaderFailed() {
@@ -66,7 +63,7 @@ public class FollowerStartRoundViewController : ViewControllerBase
             TransitionToView(AppController.Instance.viewReferences.announceReignWinnerView);
         }
 
-        _players.CurrentLeader = _players.CurrentPollLeader;
+        _players.SetCurrentLeader( _players.CurrentPollLeader );
     }
 
     private void AdvanceToCountdown()

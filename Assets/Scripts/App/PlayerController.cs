@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour 
+public class PlayerController : MonoBehaviourBase 
 {
     public string playerPrefsNameKey = "JOINED_WITH_NAME";
 
@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public void SetCurrentLeader( RitualPlayer leader )
     {
         CurrentLeader = leader;
+        _player.IsLeader = leader.uuid == _player.Uuid;
+
         Debug.Log( "Setting the leader -- " + leader.name );
     }
 
@@ -45,7 +47,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log( "Setting the end-of-ritual leader -- " + leader.name );
     }
 
-    public void SetPollLeader( RitualPlayer pollLeader )
+    public void SetCurrentPollLeader( RitualPlayer pollLeader )
     {
         CurrentPollLeader = pollLeader;
         Debug.Log( "Setting the current poll leader -- " + pollLeader.name );
@@ -66,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
     public void UpdateLeaderAtEndOfRound() 
     {
-        CurrentLeader = LeaderAtEndOfLastRitual;
+        SetCurrentLeader( LeaderAtEndOfLastRitual );
         ClearLastRitualPlayerInformation();
     }
 
