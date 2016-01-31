@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 435782}
   - 82: {fileID: 8287024}
-  - 114: {fileID: 11432030}
   - 114: {fileID: 11408716}
+  - 114: {fileID: 11487054}
   m_Layer: 0
   m_Name: MakeMicrophoneNoise
   m_TagString: Untagged
@@ -118,7 +118,7 @@ MonoBehaviour:
   _minLoudness: 0.2
   _maxLoudness: 0.8
   _makeNoiseTimeThreshold: 10
---- !u!114 &11432030
+--- !u!114 &11487054
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -126,24 +126,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 132140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9fc313776e7ca746b9f8c4b800d4ce7, type: 3}
+  m_Script: {fileID: 11500000, guid: 84e0d21e567a04116b7744c76ff2be76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InputDevice: 0
-  advanced: 0
-  audioSource: {fileID: 0}
-  amountSamples: 1024
-  loudness: 0
-  rawInput: 0
-  sensitivity: 1
-  freq: 0
-  maxFreq: 44100
-  minFreq: 0
-  Mute: 1
-  debug: 0
-  ShowDeviceName: 1
-  focused: 0
-  doNotDestroyOnLoad: 0
+  sensitivity: 100
+  ramFlushSpeed: 5
+  sourceVolume: 100
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
-
 using System.Collections.Generic;
 
-[RequireComponent(typeof(MicControl))]
 public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
     #region Fields
-    MicControl _micControl;
+    MicControlC _micControl;
     List<float> _volumes = new List<float>(1024);
 
     bool _isRecording;
@@ -27,12 +25,8 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
     #region Methods
     void Awake() 
     {
-        _micControl = GetComponent<MicControl>();
+        _micControl = GetComponent<MicControlC>();
         Begin();
-    }
-
-    void OnEnable() {
-        _micControl.sensitivity = 7f;
     }
 
     public override void Begin ()
@@ -43,11 +37,8 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
 
     void Update() {
         if (_isRecording) {
-            Debug.Log(_micControl.loudness.ToString() + " " + _micControl.sensitivity);
-            if (_micControl.sensitivity < 7f) _micControl.sensitivity = 7f;
             float loudness = _micControl.loudness;
-            _volumes.Add(loudness);
-
+            Debug.Log("LOUDNESS: " + loudness.ToString("F3"));
             if (loudness > _minLoudness && loudness < _maxLoudness) 
             {
                 _makeNoiseSum += Time.unscaledDeltaTime;
