@@ -12,28 +12,47 @@ public class AnnounceRoundWinnerViewController : ViewControllerBase
     private void DelayedAdvanceToNext()
     {
         Delay(AppController.Instance.appTimes.roundEndAdvance, () => {
-            // if is reign over
-            HandleReignOver();
-            // else
-            // AdvanceToNextRound()
+            bool leaderChanged = LeaderChanged();
+            _players.UpdateLeaderAtEndOfRound();
+
+            if (leaderChanged) 
+            {
+                HandleReignOver(); 
+            } 
+            else 
+            {
+                AdvanceToNextRound();
+            }
         });
+    }
+
+    private bool LeaderChanged() 
+    {
+        return _players.LeaderAtEndOfLastRitual.uuid != _players.Leader.uuid;
     }
 
     private void HandleReignOver()
     {
-        // if won reign
-        // AdvanceToWonReign();
-        // else
-        // AdvanceToAnnounceReignWinner();
+        if (_player.IsLeader) 
+        {
+            AdvanceToWonReign();
+        } 
+        else 
+        {
+            AdvanceToAnnounceReignWinner();
+        }
     }
-
 
     private void AdvanceToNextRound()
     {
-        // if is leader
-        // TransitionToView(AppController.Instance.viewReferences.leaderStartRoundView);
-        // else
-        TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
+        if (_player.IsLeader)
+        {
+            TransitionToView(AppController.Instance.viewReferences.leaderStartRoundView);
+        }
+        else 
+        {
+            TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
+        }
     }
 
     private void AdvanceToAnnounceReignWinner()

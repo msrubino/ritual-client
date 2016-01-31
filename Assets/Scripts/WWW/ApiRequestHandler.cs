@@ -61,8 +61,6 @@ public class ApiRequestHandler : MonoBehaviourBase
         yield return request;
 
         if ( HasRequestError( request.error ) ) yield break;
-        
-        //TODO what to do with the performed ritual info?
     }
 
     public IEnumerator RitualResults()
@@ -78,7 +76,8 @@ public class ApiRequestHandler : MonoBehaviourBase
         string leaderJSON = JsonHelper.GetJsonObject( request.text, "leader" );
         RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( leaderJSON );
 
-        //TODO Where to use this information?
+        _players.SetLastRitualWinner(winner);
+        _players.SetLeaderAtEndOfLastRitual(leader);
     }
 
     // Request Functions --------------------------------------------------

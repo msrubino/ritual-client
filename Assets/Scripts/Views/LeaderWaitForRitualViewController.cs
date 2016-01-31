@@ -18,26 +18,18 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
     private void DelayedCheckForResult()
     {
         Delay(_duration, () => {
-            CheckForResult();
+            StartCoroutine(CheckForResult());
         });
     }
 
-    private void CheckForResult()
+    private IEnumerator CheckForResult()
     {
-        // check for result
-        // ParseResponse();
+         yield return StartCoroutine(_api.RitualResults());
+         AdvanceToAnnounceRoundWinner();
     }
 
-    private void ParseResponse()
+    private void AdvanceToAnnounceRoundWinner()
     {
-        // if reign won
-        // AdvanceToReignWon();
-        // else
-        // AdvanceToRoundWon();
-    }
-
-    private void AdvanceToReignWon()
-    {
-        TransitionToView(AppController.Instance.viewReferences.wonReignView);
+        TransitionToView(AppController.Instance.viewReferences.announceRoundWinnerView);
     }
 }

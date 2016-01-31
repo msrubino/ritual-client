@@ -58,12 +58,12 @@ public class FollowerDoRitualViewController : ViewControllerBase
     {
         _didCompleteOrTimeout = true;
         UnsubscribeToRitualDidComplete();
-        CheckForResult();
+        StartCoroutine(CheckForResult());
     }
 
-    private void CheckForResult()
+    private IEnumerator CheckForResult()
     {
-        // check for result
+        yield return StartCoroutine(_api.RitualResults());
         AdvanceToAnnounceRoundWinner();
     }
 
@@ -71,8 +71,12 @@ public class FollowerDoRitualViewController : ViewControllerBase
     {
         if (_didCompleteOrTimeout) return;
         _didCompleteOrTimeout = true;
-        // TODO post ritual result
-        // TODO parse ritual result response
+
+        StartCoroutine(PostResult());
+    }
+
+    private IEnumerator PostResult() {
+        yield return StartCoroutine(_api.PerformedRitual());
         AdvanceToRitualComplete();
     }
 

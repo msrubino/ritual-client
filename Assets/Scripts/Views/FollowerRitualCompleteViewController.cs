@@ -21,18 +21,13 @@ public class FollowerRitualCompleteViewController : ViewControllerBase
         {
             yield return null;
         }
-        CheckForResult();
+        StartCoroutine(CheckForResult());
     }
 
-    private void CheckForResult()
+    private IEnumerator CheckForResult()
     {
-        // check for result
-        // AdvanceToRoundWinner()
-    }
-
-    private void AdvanceToRoundWinner()
-    {
-        // AdvanceToAnnounceRoundWinner();
+        yield return StartCoroutine(_api.RitualResults());
+        AdvanceToAnnounceRoundWinner();
     }
 
     private void AdvanceToAnnounceRoundWinner()
