@@ -3,7 +3,6 @@ using System.Collections;
 
 public class FollowerDoRitualViewController : ViewControllerBase 
 {
-
     private RitualBehaviorBase _ritualBehavior;
     private bool _didCompleteOrTimeout;
     private float _startTime;

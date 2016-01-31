@@ -65,7 +65,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &420054
 Transform:
   m_ObjectHideFlags: 1
@@ -172,9 +172,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.6
-  m_Text: 'The Chosen Has Acted
-
-    Perform Your Ritual'
+  m_Text: Follow the Chosen's instructions.
 --- !u!222 &22257664
 CanvasRenderer:
   m_ObjectHideFlags: 1
