@@ -6,11 +6,6 @@ public class ApiRequestHandler : MonoBehaviourBase
 {
     private Dictionary<string, object> _fields = new Dictionary<string, object>();
 
-    void Update()
-    {
-        if ( Input.GetKeyDown( KeyCode.Space ) ) IDoDeclareRitual();
-    }
-
     // Ritual Coroutines --------------------------------------------------
     public IEnumerator CurrentRitual()
     {

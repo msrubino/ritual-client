@@ -47,8 +47,11 @@ public class LeaderChooseRitualViewController : ViewControllerBase
 
         yield return StartCoroutine(_api.DeclareRitual());
 
+        _app.themeController.ActivateElement(mapping.elementTheme);
+
         var waitForRitualView = AppController.Instance.viewReferences.leaderWaitForRitualView as LeaderWaitForRitualViewController;
         waitForRitualView.Duration = mapping.duration;
+        waitForRitualView.CurrentTheme = mapping.elementTheme;
         TransitionToView(waitForRitualView);
     }
 

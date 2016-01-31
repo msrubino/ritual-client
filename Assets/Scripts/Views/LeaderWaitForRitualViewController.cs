@@ -9,6 +9,8 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
         set { _duration = value; }
     }
 
+    public ElementTheme CurrentTheme { get; set; }
+
     public void OnEnable()
     {
         DelayedCheckForResult();
@@ -29,6 +31,7 @@ public class LeaderWaitForRitualViewController : ViewControllerBase
 
     private void AdvanceToAnnounceRoundWinner()
     {
+        _app.themeController.DeactivateElement(CurrentTheme);
         TransitionToView(AppController.Instance.viewReferences.announceRoundWinnerView);
     }
 }
