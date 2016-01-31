@@ -22,14 +22,26 @@ public class FollowerDoRitualViewController : ViewControllerBase
         _didCompleteOrTimeout = false;
         _startTime = Time.time;
 
+        SetTheme();
         CreateRitualObject();
         _checkForTimeout = StartCoroutine(CheckForTimeout());
         BeginRitual();
     }
 
+    void SetTheme() 
+    {
+        _app.themeController.ActivateElement(AppController.Instance.ritualTypeMappings.GetThemeForType(_ritual.RitualType));
+    }
+
     public void OnDisable() 
     {
+        UnsetTheme();
         Destroy(_ritualBehavior.gameObject);
+    }
+
+    void UnsetTheme() 
+    {
+        _app.themeController.DeactivateElement(AppController.Instance.ritualTypeMappings.GetThemeForType(_ritual.RitualType));
     }
 
     private void CreateRitualObject()

@@ -11,7 +11,15 @@ public class ThemeController : MonoBehaviourBase
         ElementGroup group = elementGroups.FirstOrDefault( eg => eg.element == element ); 
         if ( group == null ) return;
 
+        group.backgroundEnvironment.SetActive(true);
         _audio.PlaySound( group.mainSFX );
+    }
+
+    public void DeactivateElement( ElementTheme element )
+    {
+        ElementGroup group = elementGroups.FirstOrDefault( eg => eg.element == element ); 
+        if ( group == null ) return;
+        group.backgroundEnvironment.SetActive(false);
     }
 
     [ContextMenu("Select Random Element")]

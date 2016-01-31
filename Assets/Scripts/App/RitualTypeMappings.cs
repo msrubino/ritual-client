@@ -12,6 +12,7 @@ public class RitualTypeMappings : ScriptableObject
         public float duration;
         public RitualBehaviorBase ritualBehavior;
         public Button ritualChooseButton;
+        public ElementTheme elementTheme;
     }
 
     public Mapping[] mappings;
@@ -35,6 +36,13 @@ public class RitualTypeMappings : ScriptableObject
         var mapping = GetMappingForType(ritualType);
         if (mapping == null) return null;
         return mapping.ritualChooseButton;
+    }
+
+    public ElementTheme GetThemeForType(RitualType ritualType)
+    {
+        var mapping = GetMappingForType(ritualType);
+        if (mapping == null) return ElementTheme.Fire;
+        return mapping.elementTheme;
     }
 
     public Mapping GetMappingForType(RitualType ritualType)
