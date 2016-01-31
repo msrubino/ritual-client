@@ -28,7 +28,7 @@ public class Player
         get; set;
     }
 
-    public string LastGestureString
+    public string DeclaredGestureString
     {
         get; set;
     }
