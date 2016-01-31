@@ -55,8 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fb6b5a8c13640308046dc290ce8f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfTaps: 4
-  _tapCount: 0
+  numberOfTaps: 250
 --- !u!114 &11487908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -75,7 +74,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: numberOfTaps
+      value: 250
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 132140}
