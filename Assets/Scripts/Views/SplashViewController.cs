@@ -41,7 +41,7 @@ public class SplashViewController : ViewControllerBase
             AdvanceToPregame();
         } else {
             Debug.Log( "Ready to start round." );
-            AdvanceToStartRound();
+            AdvanceToFollowerStartRound();
         }
     }
 
@@ -50,7 +50,7 @@ public class SplashViewController : ViewControllerBase
         TransitionToView(AppController.Instance.viewReferences.pregameView);
     }
 
-    private void AdvanceToStartRound()
+    private void AdvanceToFollowerStartRound()
     {
         TransitionToView(AppController.Instance.viewReferences.followerStartRoundView);
     }

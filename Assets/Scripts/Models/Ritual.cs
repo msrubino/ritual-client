@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 public class Ritual
 {
     private RitualType _ritualType;
@@ -22,4 +23,18 @@ public class Ritual
         set { _duration = value; }
     }
     
+    private DateTime _startAt;
+    public DateTime StartAt 
+    {
+        get { return _startAt; }
+        set { _startAt = value; }
+    }
+
+    public bool IsActive
+    {
+        get
+        {
+            return DateTime.Now < StartAt.AddSeconds( Duration );
+        }
+    }
 }

@@ -15,9 +15,10 @@ public class AppController : MonoBehaviour
     public RitualsController    ritualsController;
     public WWWController        wwwController;
 
-    public ViewReferences viewReferences;
+    public ViewReferences     viewReferences;
     public RitualTypeMappings ritualTypeMappings;
-    public AppTimes appTimes;
+    public AppTimes           appTimes;
+    public float              generalPollingDelay;
 
     public void Awake()
     {

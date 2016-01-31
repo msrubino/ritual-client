@@ -6,6 +6,11 @@ public class ApiRequestHandler : MonoBehaviourBase
 {
     private Dictionary<string, object> _fields = new Dictionary<string, object>();
 
+    void Update()
+    {
+        if ( Input.GetKeyDown( KeyCode.Space ) ) IDoDeclareRitual();
+    }
+
     // Ritual Coroutines --------------------------------------------------
     public IEnumerator CurrentRitual()
     {
@@ -14,10 +19,13 @@ public class ApiRequestHandler : MonoBehaviourBase
 
         if ( HasRequestError( request.error ) ) yield break;
 
+        Debug.Log( request.text );
         RitualObj currentRitual = JsonUtility.FromJson<RitualObj>( request.text );
+        Debug.Log( JsonUtility.ToJson( currentRitual ) );
 
         RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( request.text );
         Debug.Log( leader );
+
         //TODO what do with with current ritual information next?
     }
 
@@ -85,7 +93,7 @@ public class ApiRequestHandler : MonoBehaviourBase
     {
         string url = _www.currentRitualURL;
         _fields.Clear();
-        return CreateRequest( url, _fields );
+        return CreateRequest( url );
     }
 
     private WWW CreateDeclareRitualRequest()
@@ -130,6 +138,12 @@ public class ApiRequestHandler : MonoBehaviourBase
     }
 
     // Helper Functions --------------------------------------------------
+    private WWW CreateRequest( string url )
+    {
+        WWWForm form = new WWWForm();
+        return new WWW( url );
+    }
+
     private WWW CreateRequest( string url, Dictionary<string, object> fields )
     {
         WWWForm form = new WWWForm();
@@ -151,6 +165,7 @@ public class ApiRequestHandler : MonoBehaviourBase
         return error != null;
     }
 
+    // Context Menu Functions --------------------------------------------------
     [ContextMenu ("Reset Server")]
     private void ResetServer()
     {
@@ -167,6 +182,20 @@ public class ApiRequestHandler : MonoBehaviourBase
         yield return request;
 
         if ( HasRequestError( request.error ) ) yield break;
+    }
+
+    [ContextMenu ("DeclareRitual" )]
+    private void IDoDeclareRitual()
+    {
+        string url = _www.declareRitualURL;
+
+        _fields.Clear();
+        _fields.Add( "uuid", _players.Leader.uuid );
+        _fields.Add( "ritual_type", 0 );
+        _fields.Add( "duration", 10f );
+        _fields.Add( "starts_in", 5f );
+        
+        CreateRequest( url, _fields );
     }
 }
 
