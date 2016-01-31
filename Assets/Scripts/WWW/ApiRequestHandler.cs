@@ -7,6 +7,21 @@ public class ApiRequestHandler : MonoBehaviourBase
     private Dictionary<string, object> _fields = new Dictionary<string, object>();
 
     // Ritual Coroutines --------------------------------------------------
+    public IEnumerator CurrentRitual()
+    {
+        WWW request = CreateCurrentRitualRequest();
+        yield return request;
+
+        if ( HasRequestError( request.error ) ) yield break;
+
+        RitualObj currentRitual = JsonUtility.FromJson<RitualObj>( request.text );
+        Debug.Log( currentRitual );
+
+        RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( request.text );
+        Debug.Log( leader );
+        //TODO what do with with current ritual information next?
+    }
+
     public IEnumerator DeclareRitual()
     {
         WWW request = CreateDeclareRitualRequest();
@@ -25,7 +40,7 @@ public class ApiRequestHandler : MonoBehaviourBase
         string leaderJSON = JsonHelper.GetJsonObject( request.text, "leader" );
         RitualPlayer leader = JsonUtility.FromJson<RitualPlayer>( leaderJSON );
 
-        Ritual ritual = JsonUtility.FromJson<Ritual>( request.text );
+        RitualObj ritual = JsonUtility.FromJson<RitualObj>( request.text );
         Debug.Log( ritual );
 
         _player.IsLeader = leader.uuid == _player.Uuid ;
@@ -60,6 +75,13 @@ public class ApiRequestHandler : MonoBehaviourBase
     }
 
     // Request Functions --------------------------------------------------
+    private WWW CreateCurrentRitualRequest()
+    {
+        string url = _www.currentRitualURL;
+        _fields.Clear();
+        return CreateRequest( url, _fields );
+    }
+
     private WWW CreateDeclareRitualRequest()
     {
         string url = _www.declareRitualURL;

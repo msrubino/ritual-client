@@ -158,6 +158,7 @@ MonoBehaviour:
   isLocal: 1
   remoteURL: http://ritual.herokuapp.com/
   localURL: http://localhost:9393/
+  currentRitualRoute: current_ritual
   declareRitualRoute: declare_ritual
   joinRoute: join
   performedRitualRoute: performed_ritual
