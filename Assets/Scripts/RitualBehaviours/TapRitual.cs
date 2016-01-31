@@ -17,9 +17,12 @@ public class TapRitual : RitualBehaviorBase
         }
     }
 
+    float _startTime = 0f;
+
     public override void Begin() 
     {
         _audio.SwitchDrum();
+        _startTime = Time.time;
         TapCount = 0; 
     }
 
@@ -33,6 +36,7 @@ public class TapRitual : RitualBehaviorBase
     {
         if (TapCount >= numberOfTaps)
         {
+            _player.LastPerformanceSpeed = Time.time - _startTime;
             Complete();
         }
     }

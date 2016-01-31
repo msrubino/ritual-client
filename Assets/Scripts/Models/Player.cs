@@ -23,4 +23,13 @@ public class Player
         set { _username = value; }
     }
 
+    public float LastPerformanceSpeed 
+    {
+        get; set;
+    }
+
+    public string LastGestureString
+    {
+        get; set;
+    }
 }

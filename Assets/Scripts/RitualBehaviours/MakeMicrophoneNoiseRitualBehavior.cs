@@ -20,6 +20,8 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
     float _makeNoiseTimeThreshold = 10f;
 
     float _makeNoiseSum = 0f;
+
+    float _startTime = 0f;
     #endregion
 
     #region Methods
@@ -31,6 +33,7 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
 
     public override void Begin ()
     {
+        _startTime = Time.time;
         _isRecording = true; 
     }
 
@@ -46,6 +49,7 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
 
             if (_makeNoiseSum >= _makeNoiseTimeThreshold) 
             {
+                _player.LastPerformanceSpeed = Time.time - _startTime;
                 Complete();
             }
         }

@@ -137,7 +137,20 @@ public class ApiRequestHandler : MonoBehaviourBase
         _fields.Clear();
         _fields.Add( "uuid", _player.Uuid );
 
-        return CreateRequest( url, _fields );
+        if ( _player.LastPerformanceSpeed != 0 ) 
+        {
+        _fields.Add( "performance_speed", _player.LastPerformanceSpeed );
+        }
+
+        if ( _player.LastGestureString != null )
+        {
+            _fields.Add( "gesture_string", _player.LastGestureString );
+        }
+
+        WWW req = CreateRequest( url, _fields );
+        _player.LastPerformanceSpeed = 0;
+        _player.LastGestureString = null;
+        return req;
     }
 
     private WWW CreateRitualResultsRequest()
