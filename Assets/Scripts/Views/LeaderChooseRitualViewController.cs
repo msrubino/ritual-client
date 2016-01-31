@@ -19,9 +19,6 @@ public class LeaderChooseRitualViewController : ViewControllerBase
 
     private void Layout()
     {
-        Debug.Log(AppController.Instance);
-        Debug.Log(AppController.Instance.ritualTypeMappings);
-        Debug.Log(AppController.Instance.ritualTypeMappings.mappings);
         foreach(var mapping in AppController.Instance.ritualTypeMappings.mappings)
         {
             AddButton(mapping);
