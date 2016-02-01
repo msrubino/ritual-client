@@ -115,9 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0283687f26754a80b17b0a0f07eff2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minLoudness: 0.2
-  _maxLoudness: 0.8
-  _makeNoiseTimeThreshold: 10
+  _minLoudness: 50
+  _maxLoudness: 10000
+  _makeNoiseTimeThreshold: 5
 --- !u!114 &11487054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,7 +149,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: _makeNoiseTimeThreshold
-      value: 10
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _minLoudness
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _maxLoudness
+      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
