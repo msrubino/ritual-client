@@ -3,7 +3,20 @@ using System.Collections;
 
 public class RitualsController : MonoBehaviourBase
 {
-    public Ritual CurrentRitual { get; set; }
+    private Ritual _currentRitual;
+    public Ritual CurrentRitual 
+    { 
+        get 
+        {
+            return _currentRitual;
+        }
+        set
+        {
+            _currentRitual = value;
+            _eventSettings.ReportCurrentRitualSet( _currentRitual );
+        }
+    }
+
     public Ritual CurrentPollRitual { get; set; }
 
     public bool HasCurrentActiveRitual()

@@ -43,6 +43,7 @@ public class MonoBehaviourBase : MonoBehaviour
     protected ApiRequestHandler _api            { get { return _app.apiRequestHandler; } }
     protected AppController     _app            { get { return AppController.Instance; } }
     protected AudioController   _audio          { get { return _app.audioController; } }
+    protected EventSettings     _eventSettings  { get { return EventSettings.Instance; } }
     protected InfoHud           _infoHud        { get { return _app.infoHud; } }
     protected InputSettings     _inputSettings  { get { return InputSettings.Instance; } }
     protected Player            _player         { get { return _players.Player; } }

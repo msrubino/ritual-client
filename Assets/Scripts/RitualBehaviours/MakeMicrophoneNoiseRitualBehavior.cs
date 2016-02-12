@@ -41,6 +41,9 @@ public class MakeMicrophoneNoiseRitualBehavior : RitualBehaviorBase {
             if (loudness > _minLoudness && loudness < _maxLoudness) 
             {
                 _makeNoiseSum += Time.unscaledDeltaTime;
+                _eventSettings.ReportInputSuccessful();
+            } else {
+                _eventSettings.ReportInputFailed();
             }
 
             if (_makeNoiseSum >= _makeNoiseTimeThreshold) 
