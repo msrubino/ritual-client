@@ -35,7 +35,9 @@ public class FollowerDoRitualViewController : ViewControllerBase
 
     void SetTheme() 
     {
-        _app.themeController.ActivateElement(AppController.Instance.ritualTypeMappings.GetThemeForType(_ritual.RitualType));
+        RitualType currentType = _ritual.RitualType; 
+        ElementTheme elementTheme = _app.ritualTypeMappings.GetThemeForType( currentType );
+        _app.themeController.ActivateElement( elementTheme );
     }
 
     public void OnDisable() 
