@@ -5645,7 +5645,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 205de89f030b94b5cae11f08ff8d8299, type: 3}
+    m_Font: {fileID: 12800000, guid: 7cf1bf9983a484d84b9692dafe8904c8, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
@@ -6271,7 +6271,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 091ca3f11417544449133adc47a2209c, type: 3}
+    m_Font: {fileID: 12800000, guid: 7cf1bf9983a484d84b9692dafe8904c8, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
@@ -6283,7 +6283,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
-  m_Text: The Ritual Will Begin In...
+  m_Text: 'THE RITUAL WILL
+
+    BEGIN IN:'
 --- !u!114 &11453258
 MonoBehaviour:
   m_ObjectHideFlags: 1
