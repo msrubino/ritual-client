@@ -30,6 +30,8 @@ public class TapRitual : RitualBehaviorBase
     {
         TapCount++;
         _audio.PlaySound( AudioEffectType.TapDrum );
+
+        if ( !_didComplete ) _eventSettings.ReportInputSuccessful();
     }
 
     private void CheckForCompletion()

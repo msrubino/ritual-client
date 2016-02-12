@@ -41,6 +41,8 @@ public class ShakeRitual : RitualBehaviorBase
                 _audio.PlaySound( AudioEffectType.TapDrum );
                 _lastDrumTime = Time.time;
             }
+
+            _eventSettings.ReportInputSuccessful();
         }
     }
 

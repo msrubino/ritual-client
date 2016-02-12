@@ -13,5 +13,6 @@ public class FireEnvironment : ReactiveEnvironment
     public override void OnInputSuccessful()
     {
         if ( !volcanoSpout.isPlaying ) volcanoSpout.Play();        
+        Handheld.Vibrate();
     }
 }
